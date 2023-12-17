@@ -1,0 +1,174 @@
+:root {
+    --primary-value: #000468;
+    --red: #FF2E00;
+    --black: #000000;
+}
+
+
+/* Defining fonts */
+
+@font-face {
+    font-family: Poppins;
+    src: url('/static/font/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/static/font/Roboto-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Header CSS */
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #fff;
+}
+
+.logo-container {
+    width: 86px;
+    height: 78px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.navigation-container nav ul {
+    display: flex;
+}
+
+.navigation-container nav ul li {
+    font-family: Poppins;
+    color: var(--primary-value);
+    list-style: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.donate-join-container button {
+    box-shadow: 10px 20px 40px 0px #00000026;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.donate-join-container .donate {
+    border: 1px solid var(--primary-value);
+    color: var(--primary-value);
+    font-family: Poppins;
+    margin-right: 20px;
+}
+
+.donate-join-container .donate:hover {
+    background: var(--primary-value);
+    color: #ffffff;
+}
+
+.donate-join-container .join {
+    border: 1px solid var(--primary-value);
+    background: var(--primary-value);
+    color: #ffffff;
+    font-family: Poppins;
+}
+
+.donate-join-container .join:hover {
+    background: #fff;
+    color: var(--primary-value);
+}
+
+
+/* Hero Section CSS */
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text-cta {
+    max-width: 421px;
+    min-width: 280px;
+}
+
+.hero-text-cta h1 {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 72.12px;
+    font-family: Roboto;
+    color: var(--primary-value);
+    margin-bottom: 15px;
+}
+
+.hero-text-cta p {
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.5px;
+}
+
+.hero-text-cta span {
+    font-weight: 400;
+}
+
+.join-special-button {
+    width: 269px;
+    height: 74px;
+    background-color: #fff;
+    box-shadow: 10px 20px 40px 0px #00000026;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 25px;
+    border-radius: 35px;
+    margin-top: 20px;
+}
+
+.join-special-button p {
+    color: var(--primary-value);
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.join-special-button .join-arrow {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--primary-value);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-special-button .join-arrow svg {
+    width: 50px;
+    fill: #fff;
+}
+
+.slideshow {
+    width: 60%;
+    height: 604px;
+}
+
+.slideshow div {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+}
