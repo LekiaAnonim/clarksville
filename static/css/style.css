@@ -104,6 +104,7 @@ a {
 .hero-text-cta {
     max-width: 421px;
     min-width: 280px;
+    padding-left: 40px;
 }
 
 .hero-text-cta h1 {
@@ -171,4 +172,117 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;
+}
+
+
+/* STYLING HOME PAGE ABOUT SECTION */
+
+#about-church {
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 50px;
+}
+
+.section-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#about-church .section-title {
+    width: fit-content;
+    max-width: 397px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#about-church .section-title h1 {
+    font-weight: 700;
+    font-family: Roboto;
+    font-size: 65px;
+    color: #fff;
+    line-height: 76.12px;
+}
+
+#about-church .section-title span {
+    font-weight: 400;
+}
+
+#about-church .know-more {
+    margin-right: 30px;
+}
+
+#about-church .know-more a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 34px;
+    text-decoration: underline;
+}
+
+.about-section-main-container {
+    margin-top: 50px;
+}
+
+.about-card-container {
+    display: flex;
+    align-items: center;
+    height: 384px;
+}
+
+.about-card-container .about-card-1 {
+    width: 65%;
+    padding: 40px 30px;
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+}
+
+.about-card-container .about-card-2 {
+    width: 35%;
+    padding: 50px 40px;
+    height: 100% !important;
+}
+
+.about-card-container .about-card-1 img {
+    max-width: 228px;
+    border-radius: 25px;
+    max-height: 272px;
+    margin-right: 15px;
+}
+
+.about-card-container .about-text * {
+    color: #fff;
+}
+
+.about-card-container .about-text h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 45px;
+    font-family: Roboto, serif;
+    margin-bottom: 15px;
+}
+
+.about-card-container .about-text p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: Poppins;
+}
+
+.about-card-11 {
+    background: #7479FF73;
+}
+
+.about-card-12 {
+    background: #FF9F9F80;
+}
+
+.about-card-21 {
+    background: #000000B2;
+}
+
+.about-card-22 {
+    background: #FBFBFB80;
 }
