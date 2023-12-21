@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: Roboto;
-    src: url('/static/font/Roboto-Regular.ttf');
+    src: url('/static/font/static/RobotoSerif/RobotoSerif-Regular.ttf');
 }
 
 * {
@@ -66,28 +66,30 @@ a {
     border-radius: 20px;
     padding: 10px 25px;
     cursor: pointer;
+    font-weight: 700;
 }
 
-.donate-join-container .donate {
+.donate {
     border: 1px solid var(--primary-value);
     color: var(--primary-value);
     font-family: Poppins;
     margin-right: 20px;
+    font-weight: 700;
 }
 
-.donate-join-container .donate:hover {
+.donate:hover {
     background: var(--primary-value);
     color: #ffffff;
 }
 
-.donate-join-container .join {
+.join {
     border: 1px solid var(--primary-value);
     background: var(--primary-value);
     color: #ffffff;
     font-family: Poppins;
 }
 
-.donate-join-container .join:hover {
+.join:hover {
     background: #fff;
     color: var(--primary-value);
 }
@@ -196,16 +198,16 @@ a {
     margin-left: 30px;
 }
 
-#about-church .section-title h1 {
-    font-weight: 700;
+.section-title h1 {
+    font-weight: 900;
     font-family: Roboto;
     font-size: 65px;
     color: #fff;
     line-height: 76.12px;
 }
 
-#about-church .section-title span {
-    font-weight: 400;
+.section-title span {
+    font-weight: 400 !important;
 }
 
 #about-church .know-more {
@@ -230,7 +232,7 @@ a {
 }
 
 .about-card-container .about-card-1 {
-    width: 65%;
+    width: 60%;
     padding: 40px 30px;
     height: 100% !important;
     display: flex;
@@ -238,7 +240,7 @@ a {
 }
 
 .about-card-container .about-card-2 {
-    width: 35%;
+    width: 40%;
     padding: 50px 40px;
     height: 100% !important;
 }
@@ -285,4 +287,120 @@ a {
 
 .about-card-22 {
     background: #FBFBFB80;
+}
+
+
+/* STYLING REDEMPTION SECTION */
+
+#redemption-section {
+    width: 100%;
+    max-height: 788px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redemption-section-container .section-title {
+    max-width: 596.38px;
+}
+
+.redemption-section-body-text {
+    margin-top: 40px;
+    max-width: 366.11px;
+}
+
+.redemption-section-body-text p {
+    font-size: 20px;
+    font-family: Poppins;
+    color: #fff;
+}
+
+.redemption-section-container {
+    background: #000468C4;
+    padding: 50px 20px 15px 10%;
+    width: 100%;
+}
+
+.redemption-section-container .union-image {
+    margin-top: -300px;
+}
+
+
+/* SUBSCRIBE TO NEWSLETTER STYLING */
+
+.subscribe-to-newsletter label {
+    font-size: 16px;
+    color: #77808B;
+    margin-bottom: 15px;
+}
+
+.subscribe-to-newsletter .form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-to-newsletter {
+    padding: 50px 40px;
+    background: #fff;
+}
+
+.subscribe-to-newsletter .form_input {
+    border: 1px solid #11156E;
+    padding: 15px 15px;
+    border-radius: 10px;
+    min-width: 296px;
+}
+
+.subscribe-to-newsletter .section-title {
+    margin-bottom: 30px;
+}
+
+.subscribe-to-newsletter .section-title h1 {
+    color: var(--primary-value);
+}
+
+.subscribe-to-newsletter .subscribe-btn {
+    padding: 16px 48px 16px 48px;
+    background: #11156E;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+}
+
+
+/* STYLING DAILY DEVOTION SECTION */
+
+.daily-devotion {
+    padding: 50px 40px;
+}
+
+.section-title-container button {
+    box-shadow: 10px 20px 40px 0px #00000026;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.daily-devotion .section-title h1 {
+    color: var(--primary-value);
+}
+
+.daily-devotion .section-title p {
+    /* max-width: 296px; */
+    font-size: 16px;
+    font-family: Poppins;
+}
+
+.daily-devotion .section-title span {
+    font-weight: 600 !important;
 }
