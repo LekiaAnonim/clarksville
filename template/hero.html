@@ -32,6 +32,26 @@
             <a href="#"><button class="donate" type="button">Donate</button></a>
             <a href="#"><button class="join" type="button">Join us</button></a>
         </div>
+        <div class="hamburger" onclick="displaySideMenu()">
+            <span class="ham ham-1"></span>
+            <span class="ham ham-2"></span>
+            <span class="ham ham-3"></span>
+        </div>
+        <div class="ham-side-nav-bar translate-left-right">
+            <a href="/">
+                <div class="logo-container">
+                    <img src="/static/images/dlbc.png" alt="">
+                </div>
+            </a>
+            <br>
+            <br>
+            <ul>
+                <li class="ham-side-main-menu">Home</li>
+                <li class="ham-side-main-menu">About</li>
+                <li class="ham-side-main-menu">Sermon</li>
+                <li class="ham-side-main-menu">Connect</li>
+            </ul>
+        </div>
     </div>
     <section id="hero">
         <div class="hero-container">
@@ -142,19 +162,22 @@
             <div class="gck-daily"><iframe class="gck-video" src="https://www.youtube.com/embed/oOQFi-qDBZ8?si=Om2kLmgu3svRWLiG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-            <a href="https://dailymanna.app/category/daily-manna/">
-                <div href="https://dailymanna.app/category/daily-manna/" class="daily-manner" style="background: url('/static/images/priscilla-du-preez-x_jAYPjskYI-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            <div href="https://dailymanna.app/category/daily-manna/" class="daily-manner" style="background: url('/static/images/priscilla-du-preez-x_jAYPjskYI-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+                <a href="https://dailymanna.app/category/daily-manna/">
                     <h2>Daily Manner</h2>
-                </div>
-            </a>
-            <a href="https://dailymanna.app/category/higher-everyday/">
-                <div class="higher-everyday" style="background: url('/static/images/ankush-minda-TLBplYQvqn0-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+                </a>
+            </div>
+
+
+            <div class="higher-everyday" style="background: url('/static/images/ankush-minda-TLBplYQvqn0-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+                <a href="https://dailymanna.app/category/higher-everyday/">
                     <h2>Higher Everyday</h2>
-                </div>
-            </a>
+                </a>
+            </div>
+
         </div>
     </section>
-
     <section class="daily-devotion weekly-service">
         <div class="section-title-container">
             <div class="section-title">
@@ -200,8 +223,8 @@
             </div>
         </div>
     </section>
-    <script src="/static/js/slider.js "></script>
-
+    <script src="/static/js/slider.js"></script>
+    <script type="text/javascript " src="/static/js/main.js"></script>
 </body>
 
 </html>

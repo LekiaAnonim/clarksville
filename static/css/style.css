@@ -97,6 +97,115 @@ a {
 }
 
 
+/* Hamburger Menu STYLING */
+
+.hamburger {
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger .ham {
+    border: 0.5px solid #000000;
+    width: 20px;
+    margin-bottom: 4px;
+}
+
+.ham-side-nav-bar {
+    height: fit-content;
+    width: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    transition: all 0.2s;
+    transform: translateX(0);
+    z-index: 100000000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+}
+
+.ham-side-nav-bar * {
+    color: #1C1C1C;
+}
+
+.ham-side-nav-bar p {
+    text-transform: uppercase;
+}
+
+.ham-side-nav-bar ul a {
+    color: #1C1C1C;
+    text-align: center;
+}
+
+.ham-side-nav-bar ul li {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ham-side-main-menu {
+    padding: 5px;
+    cursor: pointer;
+    /* border-bottom: thin dashed white; */
+}
+
+.ham-side-main-menu:hover {
+    background-color: var(--blue-ocean);
+}
+
+.ham-side-dropdown-menus {
+    transition: all 0.5s;
+    padding: 5px;
+    height: fit-content;
+}
+
+.ham-side-dropdown-menus li {
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.ham-side-dropdown-menus li:hover {
+    background-color: var(--grey);
+}
+
+.ham-side-dropdown-menus a {
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+}
+
+.ham-side-dropdown-menus svg {
+    width: 30px;
+    height: 20px;
+}
+
+.display-none {
+    display: none;
+    transition: all 0.5s;
+}
+
+.translate-left-right {
+    transform: translateX(-120vw);
+}
+
+.ham-side-main-menu {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ------------------------------------- */
+
+
 /* Hero Section CSS */
 
 .hero-container {
@@ -113,9 +222,9 @@ a {
 }
 
 .hero-text-cta h1 {
-    font-size: calc(2rem + 2.5vw);
+    font-size: calc(1.5rem + 2.5vw);
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
     font-family: Roboto;
     color: var(--primary-value);
     margin-bottom: 15px;
@@ -148,7 +257,7 @@ a {
 .join-special-button p {
     color: var(--primary-value);
     font-weight: 900;
-    font-size: calc(0.9375rem + 1.17vw);
+    font-size: 30px;
 }
 
 .join-special-button .join-arrow {
@@ -205,7 +314,7 @@ a {
 .section-title h1 {
     font-weight: 900;
     font-family: Roboto;
-    font-size: calc(2rem + 2.5vw);
+    font-size: calc(1.5rem + 2.5vw);
     color: #fff;
     line-height: 1.3;
 }
@@ -216,6 +325,11 @@ a {
 
 #about-church .know-more {
     margin-right: 30px;
+}
+
+.know-more {
+    min-width: 150px;
+    /* border: #fff solid; */
 }
 
 #about-church .know-more a {
@@ -510,6 +624,20 @@ input[type='submit'] {
     margin-left: 5px;
 }
 
+.disappear {
+    display: none;
+}
+
+.rotate45 {
+    transform: rotate(45deg);
+    transform-origin: 35.5%;
+}
+
+.rotateneg45 {
+    transform: rotate(-45deg);
+    transform-origin: 35.5%;
+}
+
 @media screen and (max-width: 1060px) {
     .about-card-container .about-text h2 {
         font-size: calc(0.8rem + 1.325vw);
@@ -524,7 +652,7 @@ input[type='submit'] {
     }
     .section-title h1 {
         font-size: calc(1.3rem + 2.0vw);
-        line-height: 1.3;
+        line-height: 1.2;
     }
     .redemption-section-container .union-image {
         display: none;
@@ -556,6 +684,47 @@ input[type='submit'] {
     }
     .hero-text-cta {
         max-width: 100%;
+        width: 100%;
+    }
+    .hamburger {
+        display: flex;
+        margin-top: 5px;
+    }
+    .navigation-container {
+        display: none;
+    }
+    .donate-join-container {
+        display: none;
+    }
+    .daily-devotion-container div {
+        max-width: 100%;
+    }
+    #about-church .know-more a {
+        font-size: calc(0.7rem + 1vw);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .weekly-service .section-title-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .weekly-service .section-title-container .know-more {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-card-container {
+        height: fit-content;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .about-card-container .about-card-1 {
+        width: 100%;
+    }
+    .about-card-container .about-card-2 {
         width: 100%;
     }
 }
