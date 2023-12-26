@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Courses</title>
+    <title>Course</title>
     <link rel="stylesheet" href="/courses/static/css/course.css">
 </head>
 
@@ -47,52 +47,67 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5312 26.7313C14.9063 27.3562 13.8933 27.3562 13.2684 26.7313L3.66843 17.1313C3.04359 16.5065 3.04359 15.4934 3.66843 14.8686L13.2684 5.26858C13.8933 4.64374 14.9063 4.64374 15.5312 5.26858C16.156 5.89342 16.156 6.90648 15.5312 7.53132L8.66254 14.4L27.1998 14.3999C28.0835 14.4 28.7998 15.1163 28.7998 16C28.7998 16.8836 28.0835 17.6 27.1998 17.6L8.66254 17.6L15.5312 24.4686C16.156 25.0934 16.156 26.1065 15.5312 26.7313Z" fill="#7479FF"/>
                 </svg>
             </div>
+
             <div class="course-main-content active-course-main-content">
                 <div>
-                    <div class="course-heading">
-                        <h1>My Courses</h1>
-                        <a href="#">See All &raquo;</a>
+                    <div class="course-detail-progress">
+                        <progress id="course_progress" max="100" value="45">45%</progress><span>45%</span>
                     </div>
                     <div class="course-body">
-                        <ul class="course-categories">
-                            <li>
-                                <a href="#">All Courses</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">Active</a>
-                            </li>
-                            <li>
-                                <a href="#">Completed</a>
-                            </li>
-
-                        </ul>
-                        <div class="course-cards-container">
-                            <div class="course-card">
-                                <div class="course-image"><img src="/static/images/jon-tyson--0o9dgxEu5Q-unsplash.jpg" alt=""></div>
-                                <div class="course-content">
-                                    <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                    <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi quos.</p>
-                                    <div class="start-resume-container">
-                                        <button class="resume">Resume</button>
+                        <div class="course-cards-detail-container">
+                            <div class="course-detail-card-1">
+                                <div class="course-detail-heading">
+                                    <div class="course-detail-image">
+                                        <img src="/static/images/priscilla-du-preez-x_jAYPjskYI-unsplash.jpg" alt="">
                                     </div>
-                                    <div class="course-progress">
-                                        <progress id="course_progress" max="100" value="45">45%</progress><span>45%</span>
+                                    <div class="course-detail-title">
+                                        <h1>Cultural Intelligence</h1>
                                     </div>
-
+                                </div>
+                                <div class="course-detail-description">
+                                    <p>Consider this an invitation to join us in any of our services, where we collectively strive to glorify God and transform lives through justice, mercy, and humble devotion.</p>
+                                </div>
+                                <div class="start-resume-container">
+                                    <button class="start">Start Course</button>
                                 </div>
                             </div>
-                            <div class="course-card">
-                                <div class="course-image"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
-                                <div class="course-content">
-                                    <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                    <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi quos.</p>
-                                    <div class="start-resume-container">
-                                        <button class="start">Start</button>
+                            <div class="course-chapter-container">
+                                <div class="course-chapter-heading">
+                                    <h2>Chapter 1</h2>
+                                </div>
+                                <div class="chapter-container">
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image completed">
+                                            <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M62.6516 19.8483C64.1161 21.3128 64.1161 23.6872 62.6516 25.1517L32.6516 55.1516C31.1872 56.6161 28.8128 56.6161 27.3484 55.1516L12.3483 40.1516C10.8839 38.6872 10.8839 36.3128 12.3483 34.8484C13.8128 33.3839 16.1872 33.3839 17.6517 34.8484L30 47.1967L57.3484 19.8483C58.8128 18.3839 61.1872 18.3839 62.6516 19.8483Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>Course Outline</h3>
+                                                <span>Lesson 1</span>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="course-progress">
-                                        <progress id="course_progress" max="100" value="0">0%</progress><span>0%</span>
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image locked">
+                                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>Course Outline</h3>
+                                                <span>Lesson 2</span>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -146,13 +161,9 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
     <script src="/courses/static/js/course.js"></script>
 </body>
-
-</html>
 
 </html>
