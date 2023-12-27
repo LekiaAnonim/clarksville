@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin:auto;
+}
+.menu{
+    width:400px;
+    float: left;
+    height: 70px;
+    display: inline-block;
+}
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-left: 32px;
+    margin-top: 27px;
+    font-size: 15px;
+}
+ul li a{
+    text-decoration: none;
+    font-family: arial;
+    font-weight: bold;
+}
+ul li a:hover{
+    color:red;
+}
+#red{
+    color:red;
+}
+.left{
+    float:left;
+}
+.donate{
+    border:1px solid blue;
+    height:30px;
+    width:80px;  
+    display: flex;
+    border-radius: 45px;
+    margin-top: 20px;
+    float: left;
+    margin-left: 550px;
+}
+.donate a{
+    text-decoration: none;
+    text-align: center;
+    margin-left: 13px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-family: arial;
+}
+.join{
+    border: 1px solid blue;
+    height:30px;
+    width:80px;
+    border-radius: 45px;
+    margin-top: 20px;
+    display:flex;
+    float:right;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: rgb(3, 3, 183);
+}
+.join a{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 11px;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+}
+.pix{
+    background-image: url(up.jpg);
+    height:435px;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+.dem{
+    color:white;
+    margin-top: 120px;
+    font-weight: bold;
+    font-size: 50px;
+    height: 72px;
+    width: 250px;
+    position: absolute;
+    margin-left: 150px;
+}
+#me{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: arial;
+}
+.boy{
+    margin-top: 80px;
+    position: relative;
+    background-color: red;
+}
+.boy img{
+    float:left; 
+    /* position: relative; */
+}
+.lam{
+    width: 620px;
+    Height:132px;
+    margin-left:550px;
+    /* position: absolute; */
+}
+.rap{
+    color: rgba(0, 4, 104, 1);
+    font-weight: 350px;
+    font-size: 50px;
+    line-height: 44px;
+    width: 700px;
+}
+#nop{
+    border: 1px solid rgba(0, 4, 104, 1);
+    height: 5px;
+    width:100px;
+    border-radius: 50px;
+    background-color: rgb(3, 3, 183);
+    margin-top: 30px;
+}
+.hello{
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(41, 41, 41, 1);
+    margin-top: 20px;
+}
+.christ{
+    /* position: relative; */
+    background-color: blue;
+    margin-top: 310px;
+    height: 500px;
+}
+.christ img{
+    float:right;
+}
