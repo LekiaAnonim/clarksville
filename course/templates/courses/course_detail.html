@@ -1,0 +1,149 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Course</title>{% endblock %}
+    <!-- <link rel="stylesheet" href="/courses/static/css/course.css"> -->
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="course-main-content active-course-main-content">
+                <div>
+                    <div class="course-detail-progress">
+                        <progress id="course_progress" max="100" value="{{lesson_percent_complete}}">{{lesson_percent_complete}}%</progress><span>{{lesson_percent_complete}}% Complete</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-cards-detail-container">
+                            <div class="course-detail-card-1">
+                                <div class="course-detail-heading">
+                                    <div class="course-detail-image">
+                                        <img src="{{page.banner.url}}" alt="">
+                                    </div>
+                                    <div class="course-detail-title">
+                                        <h1>{{page.course_title}}</h1>
+                                    </div>
+                                </div>
+                                <div class="course-detail-description">
+                                    <p>{{page.course_description|richtext}}</p>
+                                </div>
+                                <div class="start-resume-container">
+                                    {% if lesson_percent_complete == 0 %}
+                                    <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}"><button class="start">Start Course</button></a> {% else %}
+                                    <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}">
+                                        <button class="start">Resume</button>
+                                    </a> {% endif %}
+                                </div>
+                            </div>
+                            <div class="course-chapter-container">
+                                <div class="course-chapter-heading">
+                                    <h2>Course Outline</h2>
+                                </div>
+
+                                <div class="chapter-container">
+                                    {% for lesson in member_course_completed_lessons %} {% if lesson %}
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image completed">
+                                            <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M62.6516 19.8483C64.1161 21.3128 64.1161 23.6872 62.6516 25.1517L32.6516 55.1516C31.1872 56.6161 28.8128 56.6161 27.3484 55.1516L12.3483 40.1516C10.8839 38.6872 10.8839 36.3128 12.3483 34.8484C13.8128 33.3839 16.1872 33.3839 17.6517 34.8484L30 47.1967L57.3484 19.8483C58.8128 18.3839 61.1872 18.3839 62.6516 19.8483Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>{{lesson.title|title}}</h3>
+                                                <a href="{% pageurl lesson %}"><span class="lesson-red-text-border">Retake</span></a>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div>No Lesson Available</div>
+                                    {% endif %}{% endfor %} {% for lesson in member_course_uncompleted_lessons %} {% if lesson %}
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image locked">
+                                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>{{lesson.title|title}}</h3>
+                                                <a href="{% pageurl lesson %}"><span class="lesson-red-text-border">Start</span></a>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div>No Lesson Available</div>
+                                    {% endif %}{% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resources-download">
+                    <div>
+                        <h2>Course Outline</h2>
+                    </div>
+                    <div class="resources-container course-outline-container">
+                        <div class="resources-card">
+                            <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="35.5" y="2.12132" width="20.7811" height="20.7811" transform="rotate(45 35.5 2.12132)" fill="#7479FF" stroke="white" stroke-width="3"/>
+                                <rect x="16.8154" y="20.8055" width="20.7811" height="20.7811" transform="rotate(45 16.8154 20.8055)" fill="#7479FF" stroke="white" stroke-width="3"/>
+                                <rect x="54.1846" y="20.8055" width="20.7811" height="20.7811" transform="rotate(45 54.1846 20.8055)" fill="#7479FF" stroke="white" stroke-width="3"/>
+                                <rect x="35.5" y="39.4897" width="20.7811" height="20.7811" transform="rotate(45 35.5 39.4897)" fill="#7479FF" stroke="white" stroke-width="3"/>
+                            </svg>
+                            <div class="resource-detail">
+                                <h3>Course Outline 1</h3><br>
+                                <span class="lesson-red-text-border">Chapter 1</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Course Outline 2</h3><br>
+                                <span class="lesson-red-text-border">Chapter 2</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Course Outline 3</h3><br>
+                                <span class="lesson-red-text-border">Chapter 3</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Course Outline 4</h3><br>
+                                <span class="lesson-red-text-border">Chapter 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>{% endblock %}
+    </div>
+    <!-- <script src="/courses/static/js/course.js"></script> -->
+</body>
+
+</html>
