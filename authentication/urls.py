@@ -4,7 +4,16 @@ from . import views
 app_name = 'authentication'
 
 urlpatterns = [
-
+     path(
+        route='profile/<int:pk>',
+        view=views.UserDetail.as_view(),
+        name='member_profile'
+    ),
+    path(
+        route='update/<int:pk>',
+        view=views.UserUpdateView.as_view(),
+        name='user_update'
+    ),
     # Login and Password reset
     path(
         route='login',
@@ -30,5 +39,4 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/',
          views.activate, name='activate'),
 
-    path('download_csv', views.csv_download, name='download_csv')
 ]

@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    "menus",
     "authentication",
     "course",
     "home",
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,7 @@ MIDDLEWARE = [
 AUTH_USER_MODEL = 'authentication.User'
 WAGTAIL_USER_EDIT_FORM = 'authentication.forms.CustomUserEditForm'
 WAGTAIL_USER_CREATION_FORM = 'authentication.forms.CustomUserCreationForm'
-WAGTAIL_USER_CUSTOM_FIELDS = ['country', 'status', 'gender', 'phone_number', 'region', 'residential_address', 'date_of_birth']
+WAGTAIL_USER_CUSTOM_FIELDS = ['country', 'status', 'gender', 'phone_number', 'region', 'residential_address', 'date_of_birth', 'avatar']
 ROOT_URLCONF = "dlclarksville.urls"
 
 TEMPLATES = [
@@ -169,3 +171,4 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

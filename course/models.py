@@ -6,13 +6,21 @@ from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from authentication.models import User
 from django.urls import reverse
-from authentication.models import MembershipStatus
+# from authentication.models import MembershipStatus
 # from wagtailmetadata.models import MetadataPageMixin
 # Create your models here.
 class CourseIndexPage(Page):
     template = 'courses/all_courses.html'
     intro = RichTextField(blank=True)
-    membership_type = models.ForeignKey(MembershipStatus, null=True, blank=True, on_delete=models.SET_NULL, related_name='member_status')
+    # membership_type = models.ForeignKey(MembershipStatus, null=True, blank=True, on_delete=models.SET_NULL, related_name='member_status')
+
+
+    MEMBER_CHOICE= (
+        ("Worker", "Worker"),
+        ("New Convert", "New Convert"),
+        ("Member", "Member"),
+    )
+    membership_type = models.CharField(max_length=100, choices=MEMBER_CHOICE, default="Member")
 
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
@@ -21,9 +29,36 @@ class CourseIndexPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super(CourseIndexPage, self).get_context(request, *args, **kwargs)
+        all_workers_courses = CoursePage.objects.live().filter(membership_category__membership_type = 'Worker')
+        all_convert_courses = CoursePage.objects.live().filter(membership_category__membership_type = 'New Convert')
+        all_member_courses = CoursePage.objects.live().filter(membership_category__membership_type = 'Member')
         all_courses = CoursePage.objects.live()
-        completed_lessons = LessonPage.objects.live().filter(users = self.owner)  
+        completed_courses = CoursePage.objects.live().filter(course_lesson__users = request.user).distinct()
+        # print(completed_courses)
+        # print(len(all_courses))
+        # all_lessons = LessonPage.objects.live().filter(course__membership_category)
+        # completed_courses = []
+        lessons_empty = []
+        for course in self.get_children().live():
+            lessons = course.get_children().live()
+            # print(lessons)
+            for lesson in lessons:
+                lessons_empty.append(lesson)
+            #     for user in lesson.users.all():
+            #         if user == request.user:
+            #             completed_courses.append(course)
+            # completed_courses = CoursePage.objects.live().filter(course__course_title = course.course_title)
+            # completed_courses.append(completed_courses)
+        # for lesson in lessons_empty:
+        #     print(lesson.lesson_title)
+        # print(completed_courses)
+        # print(lessons_empty)
+
+        context["all_workers_courses"] = all_workers_courses
+        context["all_convert_courses"] = all_convert_courses
+        context["all_member_courses"] = all_member_courses
         context["all_courses"] = all_courses
+        context["completed_courses"] = completed_courses
         return context
 
 class CoursePage(Page):
@@ -31,11 +66,14 @@ class CoursePage(Page):
     course_title = models.CharField(max_length=500, null=True)
     course_description = RichTextField(blank=True)
     banner = models.ImageField(null=True)
+    membership_category = ParentalKey('CourseIndexPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_membership')
 
     content_panels = Page.content_panels + [
         FieldPanel('course_title'),
-        FieldPanel('course_description'),
+        FieldPanel('membership_category'),
         FieldPanel('banner'),
+        FieldPanel('course_description'),
+        
     ]
 
     def __str__(self):
@@ -51,22 +89,30 @@ class CoursePage(Page):
             for user in lesson.users.all():
                 if user == request.user:
                     member.append(user)
+
         if member:
-            member_course_completed_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title, users=member[0])
-            member_course_uncompleted_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title).exclude(users=member[0])
+            member_course_completed_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title, course__membership_category__membership_type = request.user.status, users=member[0]).distinct()
+            member_course_uncompleted_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title,  course__membership_category__membership_type = request.user.status).exclude(users=member[0]).distinct()
             resume_page = member_course_uncompleted_lessons.first()
             
         else:
             member_course_completed_lessons = []
-            member_course_uncompleted_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title)
+            member_course_uncompleted_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title,  course__membership_category__membership_type = request.user.status).distinct()
             resume_page = member_course_uncompleted_lessons.first()
 
+        user_lesson = self.get_children()
+        completed_lessons = []
+        for lesson in member_course_completed_lessons[0:len(user_lesson)]:
+            completed_lessons.append(lesson)
+
+        
         lesson_percent_complete = (len(member_course_completed_lessons)/len(course_lessons))*100
         context["course_lessons"] = course_lessons
         context["member_course_completed_lessons"] = member_course_completed_lessons
         context["member_course_uncompleted_lessons"] = member_course_uncompleted_lessons
         context["lesson_percent_complete"] = lesson_percent_complete
         context["resume_page"] = resume_page
+        context["completed_lessons"] =completed_lessons
         return context
     
 class LessonPage(Page):

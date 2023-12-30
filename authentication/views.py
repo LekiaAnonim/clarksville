@@ -5,6 +5,7 @@ from django.contrib.auth.forms import (
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView, DetailView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -17,11 +18,18 @@ UserModel = get_user_model()
 from django.contrib.auth.views import (PasswordResetDoneView, PasswordResetConfirmView,
                                         PasswordResetCompleteView, PasswordChangeView,
                                        PasswordChangeDoneView, PasswordResetView)
-from models import User as Member
+from .models import User as Member
 # Create your views here.
 class UserDetail(DetailView):
     model = Member
     template_name = 'courses/profile_detail.html'
+    # login_url = "GasApp:login"
+    redirect_field_name = "redirect_to"
+
+class UserUpdateView(UpdateView):
+    fields = ['username', 'first_name', 'last_name', 'email', 'country', 'region', 'gender', 'status', 'phone_number', 'residential_address', 'date_of_birth', 'avatar']
+    model = Member
+    template_name = 'authentication/user_update.html'
     # login_url = "GasApp:login"
     redirect_field_name = "redirect_to"
 class UserLoginView(View):
