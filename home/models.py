@@ -163,3 +163,75 @@ class SubscribeFormSettings(BaseSiteSetting):
         # note the page type declared within the pagechooserpanel
         PageChooserPanel('subscribe_form_page', ['blog.SubscribeFormPage']),
     ]
+
+class About(Page):
+    max_count = 1
+    template = 'home/about.html'
+    who_we_are = RichTextField(null=True)
+    our_belief = RichTextField(null=True)
+    ministries = RichTextField(null=True)
+    regional_overseer = RichTextField(null=True)
+    general_superintendent = RichTextField(null=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('who_we_are'),
+        FieldPanel('our_belief'),
+        FieldPanel('ministries'),
+        FieldPanel('regional_overseer'),
+        FieldPanel('general_superintendent'),
+    ]
+
+class Donate(Page):
+    max_count = 1
+    template = 'home/donate.html'
+    caption_title = models.CharField(max_length=500)
+    caption_text = RichTextField(null=True)
+    donate_link = models.URLField(null=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('caption_title'),
+        FieldPanel('caption_text'),
+        FieldPanel('donate_link'),
+    ]
+
+@register_setting
+class SiteSocial(BaseSiteSetting):
+    facebook = models.URLField(max_length=500, null=True, blank=True)
+    twitter = models.URLField(max_length=500, null=True, blank=True)
+    instagram = models.URLField(max_length=500, null=True, blank=True)
+    threads = models.URLField(max_length=500, null=True, blank=True)
+    linkedin = models.URLField(max_length=500, null=True, blank=True)
+    youtube = models.URLField(max_length=500, null=True, blank=True)
+    tiktok = models.URLField(max_length=500, null=True, blank=True)
+
+
+@register_setting
+class SiteContact(BaseSiteSetting):
+    email1 = models.EmailField(help_text='Your Email address', null=True, blank=True)
+    address = models.CharField(max_length=500, null=True, blank=True)
+    phone2 = models.CharField(max_length=500, null=True, blank=True)
+
+@register_setting
+class SiteLogo(BaseSiteSetting):
+    logo = models.ImageField(null=True)
+
+@register_setting
+class ImportantPages(BaseSiteSetting):
+    # Fetch these pages when looking up ImportantPages for or a site
+    select_related = ["about", "donate", "home", "course_index"]
+
+    about = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    donate = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    home = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    course_index = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+
+    panels = [
+        PageChooserPanel('about', ['home.About']),
+        PageChooserPanel('donate', ['home.Donate']),
+        PageChooserPanel('home', ['home.Home']),
+        PageChooserPanel('home', ['course.CourseIndexPage']),
+    ]

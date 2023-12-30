@@ -19,6 +19,13 @@ from django.contrib.auth.views import (PasswordResetDoneView, PasswordResetConfi
                                         PasswordResetCompleteView, PasswordChangeView,
                                        PasswordChangeDoneView, PasswordResetView)
 from .models import User as Member
+from django.http.response import HttpResponseRedirect
+from django.core.mail import EmailMessage
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes
+from django.contrib.sites.shortcuts import get_current_site
+from .forms import UserRegisterForm
 # Create your views here.
 class UserDetail(DetailView):
     model = Member
@@ -55,12 +62,8 @@ class UserLoginView(View):
             login(request, user)
             messages.success(request, f"Login Successful ! "
                                 f"Welcome {user.username}.")
-            if user.is_superuser == True:
-                return redirect('GasApp:shops')
             
-            else:
-                shop = get_object_or_404(Shop, user=user)
-                return redirect('GasApp:shop-batches', shop.id)
+            return redirect('authentication:member_profile', user.id)
 
         else:
             messages.error(request,
@@ -68,7 +71,57 @@ class UserLoginView(View):
                            )
             return render(request, self.template_name, self.context_object)
 
+class UserRegisterView(View):
+    """
+      View to let users register
+    """
+    template_name = 'authentication/register.html'
+    context = {
+        "register_form": UserRegisterForm()
+    }
 
+    def get(self, request):
+        success_message = "Successful"
+
+        self.context['success_message'] = success_message
+        return render(request, self.template_name, self.context)
+
+    def post(self, request, *args, **kwargs):
+
+        register_form = UserRegisterForm(request.POST)
+
+        if register_form.is_valid():
+            user = register_form.save(commit=False)
+            user.is_active = True
+            user.is_staff = True
+            user.save()
+            current_site = get_current_site(request)
+            mail_subject = 'Activate your account.'
+            message = render_to_string('authentication/activate_email.html'
+                                       , {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user),
+                'protocol': 'http',
+            }
+            )
+            from_email = 'prosperlekia@gmail.com'
+            to_email = register_form.cleaned_data.get('email')
+            email = EmailMessage(
+                mail_subject, message, from_email, to=[to_email]
+            )
+            email.send()
+
+            return HttpResponseRedirect(reverse_lazy('authentication:email_verification_confirm'))
+
+        else:
+            messages.error(request, "Please provide valid information.")
+            # Redirect user to register page
+            return render(request, self.template_name, self.context)
+
+    def get_success_url(self):
+        return reverse('authentication:member_profile', self.user.id)
 
 
 class PasswordResetView(PasswordResetView):
