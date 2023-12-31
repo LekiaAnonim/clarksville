@@ -1,0 +1,65 @@
+{% load static wagtailcore_tags %}{% load wagtailuserbar %} {% load static %}{% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Document</title>{% endblock %} {% block styles %}
+    <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick-theme.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/slick-1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css"> {% endblock %}{% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    <div class="nav-header" id="header">
+        <div class="navigation-container">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Sermon</li>
+                    <li>Connect</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo-container">
+            <img src="/static/images/dlbc.png" alt="">
+        </div>
+        <div class="donate-join-container">
+            <a href="#"><button class="donate" type="button">Donate</button></a>
+            <a href="{% url 'authentication:signup' %}"><button class="join" type="button">Join us</button></a>
+            <a href="{% url 'authentication:login' %}"><button class="join" type="button">Login</button></a>
+        </div>
+        <div class="hamburger" onclick="displaySideMenu()">
+            <span class="ham ham-1"></span>
+            <span class="ham ham-2"></span>
+            <span class="ham ham-3"></span>
+        </div>
+        <div class="ham-side-nav-bar translate-left-right">
+            <a href="/">
+                <div class="logo-container">
+                    <img src="/static/images/dlbc.png" alt="">
+                </div>
+            </a>
+            <br>
+            <br>
+            <ul>
+                <li class="ham-side-main-menu">Home</li>
+                <li class="ham-side-main-menu">About</li>
+                <li class="ham-side-main-menu">Sermon</li>
+                <li class="ham-side-main-menu">Connect</li>
+            </ul>
+        </div>
+    </div>
+    {% endblock %} {% block content %} {% block footer %}{% endblock %} {% endblock %}{% block script %}
+    <script src="/static/js/slider.js"></script>
+    <script type="text/javascript " src="/static/js/main.js"></script>
+    {% endblock %}
+</body>
+
+</html>
