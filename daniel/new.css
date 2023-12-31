@@ -15,7 +15,7 @@
 }
 .menu{
     width:400px;
-    float: left;
+    float:left;
     height: 70px;
     display: inline-block;
 }
@@ -88,7 +88,7 @@ ul li a:hover{
     background-image: url(up.jpg);
     height:435px;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
     position: relative;
     background-repeat: no-repeat;
@@ -112,7 +112,6 @@ ul li a:hover{
 .boy{
     margin-top: 80px;
     position: relative;
-    background-color: red;
 }
 .boy img{
     float:left; 
@@ -138,6 +137,7 @@ ul li a:hover{
     border-radius: 50px;
     background-color: rgb(3, 3, 183);
     margin-top: 30px;
+    margin-left: 50px;
 }
 .hello{
     font-weight: 400px;
@@ -147,11 +147,75 @@ ul li a:hover{
     margin-top: 20px;
 }
 .christ{
-    /* position: relative; */
-    background-color: blue;
-    margin-top: 310px;
-    height: 500px;
+    height: 330px;
+    display: inline-block;
+    margin-left: 25px;
 }
 .christ img{
     float:right;
+    margin-right: 40px;
+}
+#sch{
+    color: rgba(0, 4, 104, 1);
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-right: 80px;
+    font-size: 50px;
+    font-weight: bold;
+}
+#late {
+    margin-left: 50px;
+    font-family: arial;
+    margin-top: 20px;
+    margin-right: 80px;
+}
+.spiritual{
+    background-image: url(spirit.png);
+    height: 400px;
+    margin-bottom: 40px;
+    margin-top: 90px;
+    margin-left: 70px;
+    margin-right: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#mens{
+    width: 414px;
+    height: 166px;
+    margin-top: 70px;
+    margin-left: 30px;
+    border: 2px solid red;
+}
+#mens h2{
+    font-weight:500;
+    font-size:55px;
+    padding: 20px;
+    color:white;
+
+}
+#many{
+    width: 475px;
+    height: 166px;
+    margin-top: 70px;
+    margin-left: 30px;
+    border: 2px solid red;
+    display: inline-block;
+}
+#many p{
+    color: white;
+    line-height: 20px;
+}
+#nepa{
+    float: right;
+    margin-right: 200px;
+    border: 1px solid white;
+    border-radius: 40px;
+    height: 70px;
+    width: 221px;
+}
+#nepa p{
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 500;
 }
