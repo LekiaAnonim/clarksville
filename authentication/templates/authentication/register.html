@@ -1,63 +1,164 @@
-{% extends 'base.html' %} {% block content %}
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html>
 
-<div class="display-sign-container batch-container login-container" style="z-index: 1000;>
-    <div class=" sign-up-container ">
-        
-        <div class="sign-up-card ">
-            <h1 class="center ">Welcome to Miroor</h1>
-            {{register_form.errors}}
-            <form action="{% url 'authentication:signup' %} " method="post " novalidate>
-                {% csrf_token %}
-                <div class="form-container ">
-                    {% for field in register_form %}
-                    <div class="fieldWrapper ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-widt, initial-scale=1.0"> {% block extra_styles%}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">{% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <div class="main registration-page">
+        <div class="new" style="background: url({% static 'images/regis.jpg' %}); backgroud-repeat: no-repeat; backgroud-cover: cover;">
+            <h1>Register with us</h1>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al</p>
+        </div>
+        <div class="com">
+            <div class="won">
+                <h2>
+                    Let us know a little more about you
+                </h2>
+                {{register_form.errors}}
+                <form action="{% url 'authentication:signup' %}" method="post" class="authentication_form">
+                    {% csrf_token %} {% for field in register_form %}
+                    <div class="fieldWrapper">
                         {% if field.errors %}
                         <ul>
                             {% for error in field.errors %}
-                            <li class="error "><strong>{{error|escape}}</strong></li>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{error|escape}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
                             {% endfor %}
                         </ul>
                         {% endif %}
-                        {{field.label_tag}}
-                        <br>
-                        {{field}}
-                        {% if field.help_text %}
-                        <p class="help ">{{field.help_text|safe}}</p>
-                        {% endif %}
                     </div>
                     {% endfor %}
-                </div>
-                <input class="sign-up-button " type="submit " value="Submit ">
-            </form>
-            <div class="showpassword-container ">
-                <input type="checkbox " onclick="showPassword(this) ">
-                <p class="showpassword-text ">Show Password</p>
-            </div>
-            <!-- <hr /> -->
-            <div class="text-center ">
-                <a class="small text-info " href="{% url 'authentication:login' %} ">Already Have an Account!</a>
-            </div>
-            <div class="text-center ">
-                <a class="small text-info " href="{{ settings.home.ImportantPages.page_url.home }} ">
-                    Home
-                </a>
+                    <div class="field_card">
+                        <label for="id_username">Username:</label>
+                        <div class="helptext" id="id_username_helptext">Required. 150 characters or fewer.</div>
+                        <input type="text" name="username" name="username" class="input100" placeholder="Username" maxlength="150" required aria-describedby="id_username_helptext" id="id_username">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_email">Email:</label>
+                        <div class="helptext" id="id_email_helptext">Required. Input a valid email address.</div>
+                        <input type="email" name="email" name="email" class="input100" placeholder="Email" maxlength="254" required aria-describedby="id_email_helptext" id="id_email">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_password1">Password:</label>
+                        <input type="password" name="password1" name="password" class="input100" placeholder="Password" required id="id_password1">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_password2">Confirm Password:</label>
+                        <div class="helptext" id="id_password2_helptext">Enter the same password as before, for verification.</div>
+                        <input type="password" name="password2" name="Confirm Password" class="input100" placeholder="Confirm Password" required aria-describedby="id_password2_helptext" id="id_password2">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_status">Status:</label>
+                        <select name="status" id="id_status">
+                            <option value="Worker">Worker</option>
+                            <option value="New Convert">New Convert</option>
+                            <option value="Member">Member</option> 
+                        </select>
+                    </div>
+                    <input id="next" class="sign-up-button" type="submit" value="SIGN UP">
+                    <!-- <a id="a-next" href="#">
+                        <div id="next">SIGN UP</div>
+                    </a> -->
+                    <!-- <label>Username:</label><br>
+                    <input id="id_username" type="text" placeholder="Enter a Username">
+                    <div class="form-wrapper">
+                        <div>
+                            <label>First Name:</label><br>
+                            <input id="id_first_name" type="text" placeholder="Enter Your First Name">
+                        </div>
+                        <div>
+                            <label>Last Name:</label><br>
+                            <input id="id_last_name" type="text" placeholder="Enter Your Last Name">
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <div id="fill">
+                            <p>Phone Number:</p><br>
+                            <input id="yours" type="number" placeholder="+23480583460">
+                        </div>
+                        <div id="sex">
+                            <label id="call">Gender:</label>
+                            <br>
+                            <form class="let">
+                                <select id="form">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="form-wrapper">
+                        <div id="fill">
+                            <p>Email:</p><br>
+                            <input id="yours" type="email" placeholder="Enter Your Email">
+                        </div>
+                        <div id="sex">
+                            <label id="call">Age:</label>
+                            <br>
+                            <form class="let">
+                                <select id="form">
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+
+                                    </select>
+                            </form>
+                        </div>
+
+                    </div>
+                    <p>Password:</p><br>
+                    <input id="name" type="password" placeholder="Atleast 8 characters">
+                    <p>Comfirm Password:</p><br>
+                    <input id="name" type="password" placeholder="Atleast 8 Characters"><br>
+                    <div class="den">
+                        <form>
+                            <label class="radio">
+                                <input type="radio" name="status" value="I'm New"/>
+                                I'm New
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="status" vlue="worker"/>
+                                Worker
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="status" value="Others"/>
+                                Others
+                            </label>
+                        </form>
+                    </div>
+                    <a id="a-next" href="#">
+                        <div id="next">NEXT</div>
+                    </a> -->
+                </form>
+
             </div>
         </div>
+        <div class="text-center ">
+            <a class="small text-info " href="{% url 'authentication:login' %} ">Already Have an Account!</a>
+        </div>
+        <div class="text-center ">
+            <a class="small text-info " href="{{ settings.home.ImportantPages.page_url.home }} ">
+                Home
+            </a>
+        </div>
+
     </div>
-</div>
+    {% endblock %}
+</body>
 
-<script>
-    let password1Input = document.querySelector("input[name='password1' ] ");
-    let password2Input = document.querySelector("input[name='password2' ] ");
+</html>
 
-    setInterval(() => {
-        if (password2Input.value == password1Input.value) {
-            password2Input.style.color = 'green';
-        } else {
-            password2Input.style.color = 'red';
-        }
-    }, 500);
-
-</script>
-
-{% endblock content %}
+</html>

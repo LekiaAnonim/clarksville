@@ -8,7 +8,9 @@ from authentication.models import Gender
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class UserRegisterForm(UserCreationForm):
@@ -37,17 +39,18 @@ class UserRegisterForm(UserCreationForm):
     password2 = forms.CharField(label="Confirm Password",
                                 help_text=_(
                                     "Enter the same password as before, for verification."),
-    widget=forms.PasswordInput(attrs={
-        "name": "Confirm Password", "class": "input100",
-        "placeholder": "Confirm Password"
-    }
-
-    ),
+    widget=forms.PasswordInput(attrs={"name": "Confirm Password", "class": "input100", "placeholder": "Confirm Password"}),
     )
+    MEMBER_CHOICE= (
+        ("Worker", "Worker"),
+        ("New Convert", "New Convert"),
+        ("Member", "Member"),
+    )
+    status = forms.ChoiceField(choices = MEMBER_CHOICE, required=True, label=_("Status"))
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2', 'status']
         widgets = {
 
             "username": forms.TextInput(attrs={

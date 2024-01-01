@@ -21,6 +21,7 @@ urlpatterns = [
         view=views.UserRegisterView.as_view(),
         name='signup'
     ),
+    path(route='signup/successful', view=views.SignUpSuccessful.as_view(), name='signup_successful'),
     path(
         route='login',
         view=views.UserLoginView.as_view(),
@@ -42,7 +43,10 @@ urlpatterns = [
          name='password_change'),
     path('password-change/done/', views.PasswordChangeDoneView.as_view(),
          name='password_change_done'),
-
+     path('email/verification/confirm', views.EmailVerificationConfirm.as_view(),
+         name='email_verification_confirm'),
+     path('email/verification/invalid', views.EmailVerificationInvalid.as_view(),
+         name='email_verification_invalid'),
     path('activate/<uidb64>/<token>/',
          views.activate, name='activate'),
 

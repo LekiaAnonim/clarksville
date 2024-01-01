@@ -68,7 +68,7 @@ a {
     cursor: pointer;
     font-weight: 700;
     /* display: flex;
-    align-items: center; */
+align-items: center; */
 }
 
 .donate {
@@ -131,6 +131,7 @@ a {
     justify-content: center;
     flex-direction: column;
     background: #fff;
+    max-width: 200px;
 }
 
 .ham-side-nav-bar * {
@@ -579,7 +580,7 @@ input[type='submit'] {
 
 
 /* .weekly-service-container div {
-    display: block;
+display: block;
 } */
 
 .worship-service-container {
@@ -659,6 +660,15 @@ input[type='submit'] {
     }
 }
 
+@media screen and (max-width: 890px) {
+    .navigation-container {
+        display: none;
+    }
+    .donate-join-container {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 825px) {
     .hero-text-cta h1 {
         font-size: calc(1.2rem + 2vw);
@@ -689,12 +699,6 @@ input[type='submit'] {
     .hamburger {
         display: flex;
         margin-top: 5px;
-    }
-    .navigation-container {
-        display: none;
-    }
-    .donate-join-container {
-        display: none;
     }
     .daily-devotion-container div {
         max-width: 100%;

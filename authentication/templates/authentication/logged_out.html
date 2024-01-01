@@ -1,3 +1,16 @@
 {% extends 'base.html' %} {% load i18n %} {% block content %}
-<p>Logged out!</p>
-<a href="{% url 'authentication:login'%}">Click here to login again.</a> {% endblock %}
+
+<div class="card text-center">
+    <div class="card-header">
+        You are logged out
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Logged out!.</h5>
+        <p class="card-text"><span>Note:</span> Click here to login again.</p>
+        <a href="{% url 'authentication:login' %}" class="btn btn-primary">Login</a>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="/">Home</a>
+    </div>
+</div>
+{% endblock %}
