@@ -1,13 +1,35 @@
-{% extends 'base.html' %} {% load i18n %} {% block content %}
-<div class="display-sign-container batch-container login-container" style="z-index: 1000;">
-    <div class="sign-up-container">
+{% extends 'base.html' %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %} {% load i18n %}
+<!DOCTYPE html>
+<html>
 
-        <div class="sign-up-card">
-            <h5>Please confirm your email address to complete the registration.</h5>
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-widt, initial-scale=1.0" /> {% block extra_styles%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/thanks.css' %}">{% endblock %}
+
+</head> {% block content %}
+<div class="display-sign-container batch-container login-container" style="z-index: 1000;">
+    <!-- <div class="main success_page">
+        <div class="bold">
+            <div class="tick">
+                <div class="boda"></div>
+                <div class="sec">
+                </div>
+            </div>
         </div>
-        <span>Continue create your profile by provide some personal info.</span>
-        <p><span>Note:</span> You can not create a channel without having a profile.</p>
-        <a class="create-profile-link" href="{% url 'authentication:login' %}"></a>
+    </div> -->
+    <div class="card text-center">
+        <div class="card-header">
+            Confirm Your Email
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Please confirm your email address to complete the registration.</h5>
+            <p class="card-text"><span>Note:</span> You we will find our available courses on your Dashboard.</p>
+            <a href="{% url 'authentication:login' %}" class="btn btn-primary">Login</a>
+        </div>
+        <div class="card-footer text-muted">
+            Check your email inbox or spam.
+        </div>
     </div>
 </div>
 

@@ -166,7 +166,7 @@ class SubscribeFormSettings(BaseSiteSetting):
 
 class About(Page):
     max_count = 1
-    template = 'home/about.html'
+    template = 'home/About.html'
     who_we_are = RichTextField(null=True)
     our_belief = RichTextField(null=True)
     ministries = RichTextField(null=True)
@@ -184,7 +184,7 @@ class About(Page):
 class Donate(Page):
     max_count = 1
     template = 'home/donate.html'
-    caption_title = models.CharField(max_length=500)
+    caption_title = RichTextField(null=True)
     caption_text = RichTextField(null=True)
     donate_link = models.URLField(null=True)
 

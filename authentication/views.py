@@ -14,7 +14,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth import get_user_model
-UserModel = get_user_model()
+User = get_user_model()
 from django.contrib.auth.views import (PasswordResetDoneView, PasswordResetConfirmView,
                                         PasswordResetCompleteView, PasswordChangeView,
                                        PasswordChangeDoneView, PasswordResetView)
@@ -27,6 +27,9 @@ from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from .forms import UserRegisterForm
 # Create your views here.
+
+class SignUpSuccessful(TemplateView):
+    template_name = 'authentication/thanks.html'
 class UserDetail(DetailView):
     model = Member
     template_name = 'courses/profile_detail.html'
@@ -43,7 +46,7 @@ class UserLoginView(View):
     """
      Logs author into dashboard.
     """
-    template_name = 'login.html'
+    template_name = 'authentication/login.html'
     context_object = {"login_form": AuthenticationForm}
 
     def get(self, request, *args, **kwargs):
@@ -120,38 +123,38 @@ class UserRegisterView(View):
             # Redirect user to register page
             return render(request, self.template_name, self.context)
 
-    def get_success_url(self):
-        return reverse('authentication:member_profile', self.user.id)
+    # def get_success_url(self):
+    #     return reverse('authentication:signup_successful')
 
 
 class PasswordResetView(PasswordResetView):
-    template_name = 'registration/pwd_reset_form.html'
-    email_template_name = "registration/email_text/password_reset_email.html"
+    template_name = 'authentication/pwd_reset_form.html'
+    email_template_name = "authentication/email_text/password_reset_email.html"
     from_email = ''
-    subject_template_name = "registration/email_text/password_reset_subject.txt"
-    success_url = reverse_lazy("GasApp:password_reset_done")
+    subject_template_name = "authentication/email_text/password_reset_subject.txt"
+    success_url = reverse_lazy("authentication:password_reset_done")
 
 class PasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'registration/email_text/password_reset_done.html' 
+    template_name = 'authentication/email_text/password_reset_done.html' 
 
 class PasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'registration/email_text/password_reset_confirm.html'
-    success_url = reverse_lazy("GasApp:password_reset_complete")
+    template_name = 'authentication/email_text/password_reset_confirm.html'
+    success_url = reverse_lazy("authentication:password_reset_complete")
 
 class PasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'registration/email_text/password_reset_complete.html'
+    template_name = 'authentication/email_text/password_reset_complete.html'
 
 class PasswordChangeView(PasswordChangeView):
-    template_name = 'registration/email_text/password_change_form.html'
-    success_url = reverse_lazy("GasApp:password_change_done")
+    template_name = 'authentication/email_text/password_change_form.html'
+    success_url = reverse_lazy("authentication:password_change_done")
 
 class PasswordChangeDoneView(PasswordChangeDoneView):
-    template_name = 'registration/email_text/password_change_done.html'
+    template_name = 'authentication/email_text/password_change_done.html'
 
 def activate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
-        user = UserModel._default_manager.get(pk=uid)
+        user = User._default_manager.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
     if user is not None and default_token_generator.check_token(user, token):
@@ -160,14 +163,14 @@ def activate(request, uidb64, token):
         login(request, user)
         messages.success(
             request, f'Hi {user.username}, your registration was successful!! .')
-        return reverse('GasApp:shops')
+        return reverse('authentication:login')
     else:
-        return reverse_lazy('GasApp:email_verification_invalid')
+        return reverse_lazy('authentication:email_verification_invalid')
 
 
 class EmailVerificationConfirm(TemplateView):
-    template_name = 'registration/email_verification_confirm.html'
+    template_name = 'authentication/email_verification_confirm.html'
 
 
 class EmailVerificationInvalid(TemplateView):
-    template_name = 'registration/email_verification_invalid.html'
+    template_name = 'authentication/email_verification_invalid.html'
