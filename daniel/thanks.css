@@ -84,17 +84,16 @@ ul li a:hover{
     font-weight: bold;
     font-family: arial;
 }
-.bold{
+.bold{ 
     width:900px;
-    height: 500px;
-    background-color: red;
-    margin-left: 120px;
+    height: 800px;
+    margin-left: 180px;
     margin-top: 20px;
     position: relative;
 }
 .tick{
-    height:250px;
-    width: 250px;
+    height:280px;
+    width: 280px;
     background-color: rgba(185, 255, 192, 1);
     margin-left: 300px;
     margin-top: 220px;
@@ -102,17 +101,84 @@ ul li a:hover{
     border-radius: 50%;
 }
 .sec{
-    width: 125px;
-    height: 125px;
+    width: 148px;
+    height: 148px;
     background-color: rgba(132, 255, 144, 1);
     border-radius: 50%;
     margin-left: 65px;
     margin-top: 65px;
     position: absolute;
 }
-/* .boda{
-    height: 80px;
-    width: 80px;
-    background-color: rgba(185, 255, 192, 1);
+.boda{
+    height: 75px;
+    width: 75px;
+    background-color: #98FAC0;
     border-radius: 50%;
-} */
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 170px;
+}
+.ecl{
+    height: 20px;
+    width: 20px;
+    background-color: #98FAC0;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 170px;
+}
+.lips{
+    height: 50px;
+    width: 50px;
+    background-color: #98FAC0;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 600px;
+    margin-top: 350px;
+}
+.lip{
+    height: 30px;
+    width: 30px;
+    background-color: #98FAC0;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 450px;
+}
+.label{
+    width:723px;
+    position: absolute;
+    margin-top: 600px;
+    margin-left: 250px;  
+}
+#thanks{
+    color: rgb(3, 3, 183);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+#do{
+    text-align: center;
+    margin-top: 40px;
+    width: 380px;
+}
+#log{
+    background-color:var(--ACCENT-LITE, #7479FF);
+    width: 325px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#a-log{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+  
+    
+}

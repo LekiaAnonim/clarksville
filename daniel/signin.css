@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin:auto;
+}
+.menu{
+    width:400px;
+    float: left;
+    height: 70px;
+    display: inline-block;
+}
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-left: 32px;
+    margin-top: 27px;
+    font-size: 15px;
+}
+ul li a{
+    text-decoration: none;
+    font-family: arial;
+    font-weight: bold;
+}
+ul li a:hover{
+    color:red;
+}
+#red{
+    color:red;
+}
+.left{
+    float:left;
+}
+.donate{
+    border:1px solid blue;
+    height:30px;
+    width:80px;  
+    display: flex;
+    border-radius: 45px;
+    margin-top: 20px;
+    float: left;
+    margin-left: 550px;
+}
+.donate a{
+    text-decoration: none;
+    text-align: center;
+    margin-left: 13px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-family: arial;
+}
+.join{
+    border: 1px solid blue;
+    height:30px;
+    width:80px;
+    border-radius: 45px;
+    margin-top: 20px;
+    display:flex;
+    float:right;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: rgb(3, 3, 183);
+}
+.join a{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 11px;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+}
+.signin{
+display: flex;
+width: 315px;
+height: 409px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+margin-left: 500px;
+margin-top: 40px;
+} 
+.sign{
+color: var(--primary-blue, #000468);
+font-family: Poppins;
+font-size: 34px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: capitalize;
+}
+.word{
+    color: black;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 30px;
+line-height: normal;
+text-transform: capitalize;
+font-family: arial;
+margin-top: 20px;
+}
+.user{
+    height: 30px;
+    padding-left: 10px;
+}
+#forget {
+    margin-left: 185px;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+}
+#in{
+    border-radius: 5px;
+    height: 30px;
+    width: 300;
+    border-radius: 10px;
+    background: var(--ACCENT-LITE, #7479FF);
+    box-shadow: 10px 20px 44px 0px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+#in p{
+    margin-top: 5px;
+}
