@@ -10,7 +10,7 @@ from django.urls import reverse
 
 @register_snippet
 class Gender(models.Model):
-    gender = models.CharField(max_length=200, null=True)
+    gender = models.CharField(max_length=200, null=True, blank=True)
     panels = [
         FieldPanel('gender'),
     ]
@@ -22,9 +22,9 @@ class Gender(models.Model):
         verbose_name_plural = _("Gender")
 
 class User(AbstractUser):
-    country = models.CharField(verbose_name='country', max_length=255, null=True)
-    region = models.CharField(verbose_name='region', max_length=255, null=True)
-    gender = models.ForeignKey(Gender, on_delete=models.SET_NULL, null=True)
+    country = models.CharField(verbose_name='country', max_length=255, null=True, blank=True)
+    region = models.CharField(verbose_name='region', max_length=255, null=True, blank=True)
+    gender = models.ForeignKey(Gender, on_delete=models.SET_NULL, null=True, blank=True)
     MEMBER_CHOICE= (
         ("Worker", "Worker"),
         ("New Convert", "New Convert"),
@@ -32,10 +32,10 @@ class User(AbstractUser):
     )
     status = models.CharField(max_length=100, choices=MEMBER_CHOICE, default="Member")
     # status = models.ForeignKey(MembershipStatus, on_delete=models.SET_NULL, null=True)
-    phone_number = models.CharField(max_length=255, null=True)
-    residential_address = models.CharField(max_length=255, null=True)
-    date_of_birth = models.DateField(null=True)
-    avatar = models.ImageField(null=True)
+    phone_number = models.CharField(max_length=255, null=True, blank=True)
+    residential_address = models.CharField(max_length=255, null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    avatar = models.ImageField(null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('authentication:member_profile', kwargs={'username': self.user.username.lower(), 'pk': self.pk})

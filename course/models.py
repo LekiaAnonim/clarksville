@@ -14,9 +14,6 @@ class CourseIndexPage(Page):
     WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/all_courses.html'
     intro = RichTextField(blank=True)
-    # membership_type = models.ForeignKey(MembershipStatus, null=True, blank=True, on_delete=models.SET_NULL, related_name='member_status')
-
-
     MEMBER_CHOICE= (
         ("Worker", "Worker"),
         ("New Convert", "New Convert"),
@@ -36,25 +33,11 @@ class CourseIndexPage(Page):
         all_member_courses = CoursePage.objects.live().filter(membership_category__membership_type = 'Member')
         all_courses = CoursePage.objects.live()
         completed_courses = CoursePage.objects.live().filter(course_lesson__users = request.user).distinct()
-        # print(completed_courses)
-        # print(len(all_courses))
-        # all_lessons = LessonPage.objects.live().filter(course__membership_category)
-        # completed_courses = []
         lessons_empty = []
         for course in self.get_children().live():
             lessons = course.get_children().live()
-            # print(lessons)
             for lesson in lessons:
                 lessons_empty.append(lesson)
-            #     for user in lesson.users.all():
-            #         if user == request.user:
-            #             completed_courses.append(course)
-            # completed_courses = CoursePage.objects.live().filter(course__course_title = course.course_title)
-            # completed_courses.append(completed_courses)
-        # for lesson in lessons_empty:
-        #     print(lesson.lesson_title)
-        # print(completed_courses)
-        # print(lessons_empty)
 
         context["all_workers_courses"] = all_workers_courses
         context["all_convert_courses"] = all_convert_courses
@@ -67,9 +50,9 @@ class CoursePage(Page):
     WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'authentication/login.html'
     WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/course_detail.html'
-    course_title = models.CharField(max_length=500, null=True)
+    course_title = models.CharField(max_length=500, null=True, blank=True)
     course_description = RichTextField(blank=True)
-    banner = models.ImageField(null=True)
+    banner = models.ImageField(null=True, blank=True)
     membership_category = ParentalKey('CourseIndexPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_membership')
 
     content_panels = Page.content_panels + [
@@ -123,7 +106,7 @@ class LessonPage(Page):
     WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'authentication/login.html'
     WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/lesson_detail.html'
-    lesson_title = models.CharField(max_length=500, null=True)
+    lesson_title = models.CharField(max_length=500, null=True, blank=True)
     course =  ParentalKey('CoursePage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_lesson')
     date_created = models.DateField(auto_now=True)
     lesson_content = RichTextField(blank=True)
@@ -195,7 +178,7 @@ class LessonPage(Page):
 
 @register_snippet
 class Objective(models.Model):
-    objective = RichTextField(null=True)
+    objective = RichTextField(null=True, blank=True)
     lesson = ParentalKey('LessonPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='lesson_objective')
 
     panels = [
@@ -211,7 +194,7 @@ class Objective(models.Model):
 
 @register_snippet
 class Resource(models.Model):
-    resource_title = models.CharField(max_length=500, null=True)
+    resource_title = models.CharField(max_length=500, null=True, blank=True)
     upload_resource = models.FileField()
 
     panels = [

@@ -13,25 +13,25 @@ class HomePage(Page):
     template = 'home/home_page.html'
     max_count = 1
     # hero_section_title = models.CharField(max_length=500, null=True)
-    hero_section_text = RichTextField(null=True)
-    slider_image_1 = models.ImageField(null=True)
-    slider_image_2 = models.ImageField(null=True)
-    slider_image_3 = models.ImageField(null=True)
-    slider_image_4 = models.ImageField(null=True)
-    slider_image_5 = models.ImageField(null=True)
-    about_church_background_image = models.ImageField(null=True)
-    about_church_title_1 = models.CharField(max_length=500, null=True)
-    about_church_text_1 = RichTextField(null=True)
-    about_church_image_1 = models.ImageField(null=True)
-    about_church_title_2 = models.CharField(max_length=500, null=True)
-    about_church_text_2 = RichTextField(null=True)
+    hero_section_text = RichTextField(null=True, blank=True)
+    slider_image_1 = models.ImageField(null=True, blank=True)
+    slider_image_2 = models.ImageField(null=True, blank=True)
+    slider_image_3 = models.ImageField(null=True, blank=True)
+    slider_image_4 = models.ImageField(null=True, blank=True)
+    slider_image_5 = models.ImageField(null=True, blank=True)
+    about_church_background_image = models.ImageField(null=True, blank=True)
+    about_church_title_1 = models.CharField(max_length=500, null=True, blank=True)
+    about_church_text_1 = RichTextField(null=True, blank=True)
+    about_church_image_1 = models.ImageField(null=True, blank=True)
+    about_church_title_2 = models.CharField(max_length=500, null=True, blank=True)
+    about_church_text_2 = RichTextField(null=True, blank=True)
     # about_church_image_2 = models.ImageField(null=True)
-    about_church_title_3 = models.CharField(max_length=500, null=True)
-    about_church_text_3 = RichTextField(null=True)
+    about_church_title_3 = models.CharField(max_length=500, null=True, blank=True)
+    about_church_text_3 = RichTextField(null=True, blank=True)
     # about_church_image_3 = models.ImageField(null=True)
-    about_church_title_4 = models.CharField(max_length=500, null=True)
-    about_church_text_4 = RichTextField(null=True)
-    about_church_image_4 = models.ImageField(null=True)
+    about_church_title_4 = models.CharField(max_length=500, null=True, blank=True)
+    about_church_text_4 = RichTextField(null=True, blank=True)
+    about_church_image_4 = models.ImageField(null=True, blank=True)
 
     content_panels = Page.content_panels + [
         # FieldPanel('hero_section_title'),
@@ -71,11 +71,11 @@ class HomePage(Page):
 
 @register_snippet
 class WorshipService(models.Model):
-    service_title = models.CharField(max_length=500, null=True)
-    service_day = models.CharField(max_length=500, null=True)
-    time_from = models.CharField(max_length=500, null=True)
-    time_to = models.CharField(max_length=500, null=True)
-    service_image = models.ImageField(null=True)
+    service_title = models.CharField(max_length=500, null=True, blank=True)
+    service_day = models.CharField(max_length=500, null=True, blank=True)
+    time_from = models.CharField(max_length=500, null=True, blank=True)
+    time_to = models.CharField(max_length=500, null=True, blank=True)
+    service_image = models.ImageField(null=True, blank=True)
     join_via_facebook_live_link = models.URLField(null=True, blank=True)
     join_via_youtube_live_link = models.URLField(null=True, blank=True)
     join_via_zoom_live_link = models.URLField(null=True, blank=True)
@@ -94,9 +94,9 @@ class WorshipService(models.Model):
         return self.service_title
     
 class DailyDevotion(models.Model):
-    devotion_type = models.CharField(max_length=500, null=True)
+    devotion_type = models.CharField(max_length=500, null=True, blank=True)
     devotion_url = models.URLField(null=True, blank=True)
-    devotion_image = models.ImageField(null=True)
+    devotion_image = models.ImageField(null=True, blank=True)
 
     panels = [
         FieldPanel('devotion_type'),
@@ -167,11 +167,11 @@ class SubscribeFormSettings(BaseSiteSetting):
 class About(Page):
     max_count = 1
     template = 'home/About.html'
-    who_we_are = RichTextField(null=True)
-    our_belief = RichTextField(null=True)
-    ministries = RichTextField(null=True)
-    regional_overseer = RichTextField(null=True)
-    general_superintendent = RichTextField(null=True)
+    who_we_are = RichTextField(null=True, blank=True)
+    our_belief = RichTextField(null=True, blank=True)
+    ministries = RichTextField(null=True, blank=True)
+    regional_overseer = RichTextField(null=True, blank=True)
+    general_superintendent = RichTextField(null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('who_we_are'),
@@ -184,9 +184,9 @@ class About(Page):
 class Donate(Page):
     max_count = 1
     template = 'home/donate.html'
-    caption_title = RichTextField(null=True)
-    caption_text = RichTextField(null=True)
-    donate_link = models.URLField(null=True)
+    caption_title = RichTextField(null=True, blank=True)
+    caption_text = RichTextField(null=True, blank=True)
+    donate_link = models.URLField(null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('caption_title'),
@@ -213,12 +213,12 @@ class SiteContact(BaseSiteSetting):
 
 @register_setting
 class SiteLogo(BaseSiteSetting):
-    logo = models.ImageField(null=True)
+    logo = models.ImageField(null=True, blank=True)
 
 @register_setting
 class ImportantPages(BaseSiteSetting):
     # Fetch these pages when looking up ImportantPages for or a site
-    select_related = ["about", "donate", "home", "course_index"]
+    select_related = ["about", "donate", "home"]
 
     about = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
@@ -226,14 +226,14 @@ class ImportantPages(BaseSiteSetting):
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
     home = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
-    course_index = models.ForeignKey(
-        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    # course_index = models.ForeignKey(
+    #     'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
 
     panels = [
         PageChooserPanel('about', ['home.About']),
         PageChooserPanel('donate', ['home.Donate']),
         PageChooserPanel('home', ['home.HomePage']),
-        PageChooserPanel('course_index', ['course.CourseIndexPage']),
+        # PageChooserPanel('course_index', ['course.CourseIndexPage']),
     ]
 
 class ContactFormField(AbstractFormField):
