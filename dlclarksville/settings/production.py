@@ -7,7 +7,7 @@ try:
 except ImportError:
     pass
 
-import dj_database_url
+
 import environ
 import cloudinary.uploader
 import cloudinary.api
@@ -28,9 +28,7 @@ cloudinary.config(
   api_secret = env("CLOUD_API_SECRET") 
 )
 
-DATABASES = {
-    "default": dj_database_url.config(default=env('postgresql://postgres:AD*23eCG54dEe43aCe**4a2ec4*C*ef4@monorail.proxy.rlwy.net:44724/railway'), conn_max_age=1800),
-}
+
 
 EMAIL_HOST = 'smtp.elasticemail.com'
 EMAIL_USE_TLS = True

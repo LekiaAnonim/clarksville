@@ -13,9 +13,18 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.core.management.utils import get_random_secret_key
+import dj_database_url
+import environ
+# import cloudinary.uploader
+import cloudinary.api
+import cloudinary
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # Quick-start development settings - unsuitable for production
@@ -96,13 +105,15 @@ WSGI_APPLICATION = "dlclarksville.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+    "default": dj_database_url.config(default='postgresql://postgres:AD*23eCG54dEe43aCe**4a2ec4*C*ef4@monorail.proxy.rlwy.net:44724/railway', conn_max_age=1800),
 }
-
 
 
 

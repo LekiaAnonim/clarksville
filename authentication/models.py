@@ -8,19 +8,6 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
 from django.urls import reverse
 
-# @register_snippet
-# class MembershipStatus(models.Model):
-#     status = models.CharField(max_length=200, null=True)
-#     panels = [
-#         FieldPanel('status'),
-#     ]
-
-#     def __str__(self):
-#         return self.status
-    
-#     class Meta:
-#         verbose_name_plural = _("Membership Status")
-
 @register_snippet
 class Gender(models.Model):
     gender = models.CharField(max_length=200, null=True)
