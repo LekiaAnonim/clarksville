@@ -365,7 +365,7 @@ align-items: center; */
 
 .about-card-container .about-card-1 {
     width: 60%;
-    padding: 40px 30px;
+    padding: 40px 10px;
     height: 100% !important;
     display: flex;
     align-items: center;
@@ -373,7 +373,7 @@ align-items: center; */
 
 .about-card-container .about-card-2 {
     width: 40%;
-    padding: 50px 40px;
+    padding: 40px 10px;
     height: 100% !important;
 }
 
@@ -559,7 +559,7 @@ input[type='submit'] {
     font-family: Roboto;
 }
 
-.daily-devotion-container div {
+.daily-devotion-container .daily-devotion-card {
     width: 100%;
     max-width: 354px;
     aspect-ratio: 16 / 9;
@@ -601,6 +601,7 @@ display: block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-right: 20px;
 }
 
 .worship-service-container h3 {
@@ -686,7 +687,7 @@ display: block;
     .hero-text-cta h1 {
         font-size: calc(1.2rem + 2vw);
     }
-    .hero-text-cta p {
+    .hero-text-cta .hero-text {
         font-size: 12px;
     }
 }
@@ -694,9 +695,13 @@ display: block;
 @media screen and (max-width: 748px) {
     .about-card-container .about-card-1 {
         flex-direction: column;
+        width: 100%;
     }
     .about-card-container .about-card-1 img {
         margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        margin-right: 10px;
     }
     .hero-container {
         flex-direction: column-reverse;
@@ -708,6 +713,9 @@ display: block;
     .hero-text-cta {
         max-width: 100%;
         width: 100%;
+        margin-top: 20px;
+        padding-left: 20px;
+        margin-right: 20px;
     }
     .hamburger {
         display: flex;
@@ -744,4 +752,48 @@ display: block;
     .about-card-container .about-card-2 {
         width: 100%;
     }
+    .slideshow {
+        width: 100%;
+        height: 300px;
+    }
+    #about-church .section-title {
+        margin-left: 10px;
+    }
+    #about-church .know-more {
+        margin-right: 10px;
+        float: right;
+        display: flex;
+        justify-content: right;
+    }
+    .daily-devotion-container .daily-devotion-card {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 10px;
+    }
+    .footer-container {
+        margin-top: 30px;
+    }
+}
+
+.zoom-service {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: #2D8CFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.zoom-service svg {
+    fill: #ffffff;
+    width: 25px;
+    height: 22px;
+}
+
+.service-name-zoom {
+    display: flex;
+    align-items: center;
 }

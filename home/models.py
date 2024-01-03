@@ -76,9 +76,9 @@ class WorshipService(models.Model):
     time_from = models.CharField(max_length=500, null=True, blank=True)
     time_to = models.CharField(max_length=500, null=True, blank=True)
     service_image = models.ImageField(null=True, blank=True)
-    join_via_facebook_live_link = models.URLField(null=True, blank=True)
-    join_via_youtube_live_link = models.URLField(null=True, blank=True)
-    join_via_zoom_live_link = models.URLField(null=True, blank=True)
+    # join_via_facebook_live_link = models.URLField(null=True, blank=True)
+    # join_via_youtube_live_link = models.URLField(null=True, blank=True)
+    # join_via_zoom_live_link = models.URLField(null=True, blank=True)
 
     panels = [
         FieldPanel('service_title'),
@@ -86,13 +86,14 @@ class WorshipService(models.Model):
         FieldPanel('time_from'),
         FieldPanel('time_to'),
         FieldPanel('service_image'),
-        FieldPanel('join_via_facebook_live_link'),
-        FieldPanel('join_via_youtube_live_link'),
-        FieldPanel('join_via_zoom_live_link'),
+        # FieldPanel('join_via_facebook_live_link'),
+        # FieldPanel('join_via_youtube_live_link'),
+        # FieldPanel('join_via_zoom_live_link'),
     ]
     def __str__(self):
         return self.service_title
-    
+
+@register_snippet
 class DailyDevotion(models.Model):
     devotion_type = models.CharField(max_length=500, null=True, blank=True)
     devotion_url = models.URLField(null=True, blank=True)

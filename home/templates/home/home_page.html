@@ -16,7 +16,7 @@
                 <h1>
                     Welcome To <span>Deeper Life Bible</span> Church
                 </h1>
-                <p>
+                <p class="hero-text">
                     {{page.hero_section_text|richtext}}
                 </p>
                 <a href="{% url 'authentication:signup' %}">
@@ -125,22 +125,22 @@
             </div>
         </div>
         <div class="daily-devotion-container">
-            <div class="gck-daily"><iframe class="gck-video" src="https://www.youtube.com/embed/oOQFi-qDBZ8?si=Om2kLmgu3svRWLiG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <div class="gck-daily daily-devotion-card"><iframe class="gck-video" src="https://www.youtube.com/embed/oOQFi-qDBZ8?si=Om2kLmgu3svRWLiG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
             {% if daily_devotions %} {% for devotion in daily_devotions %}
-            <div href="{{ devotion.devotion_url }}" class="daily-manner" style="background: url('{{devotion.devotion_image.url}}'); background-repeat: no-repeat; background-size: cover;">
+            <div href="{{ devotion.devotion_url }}" class="daily-manner daily-devotion-card" style="background: url('{{devotion.devotion_image.url}}'); background-repeat: no-repeat; background-size: cover;">
                 <a href="{{ devotion.devotion_url }}">
                     <h2>{{devotion.devotion_type|title}}</h2>
                 </a>
             </div>
             {% endfor %} {% else %}
-            <div href="https://dailymanna.app/category/daily-manna/" class="daily-manner" style="background: url('/static/images/priscilla-du-preez-x_jAYPjskYI-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div href="https://dailymanna.app/category/daily-manna/" class="daily-manner daily-devotion-card" style="background: url('/static/images/priscilla-du-preez-x_jAYPjskYI-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
                 <a href="https://dailymanna.app/category/daily-manna/">
                     <h2>Daily Manner</h2>
                 </a>
             </div>
-            <div class="higher-everyday" style="background: url('/static/images/ankush-minda-TLBplYQvqn0-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="higher-everyday daily-devotion-card" style="background: url('/static/images/ankush-minda-TLBplYQvqn0-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
                 <a href="https://dailymanna.app/category/higher-everyday/">
                     <h2>Higher Everyday</h2>
                 </a>
@@ -167,7 +167,7 @@
         <div class="daily-devotion-container weekly-service-container">
             {% if worship_services %} {% for service in worship_services %}
             <div class="worship-service-container">
-                <div class="sunday-worship" style="background: url('{{ service.service_image.url }}'); background-repeat: no-repeat; background-size: cover;">
+                <div class="sunday-worship daily-devotion-card" style="background: url('{{ service.service_image.url }}'); background-repeat: no-repeat; background-size: cover;">
                 </div>
                 <h3>{{service.service_title }}</h3>
                 <span class="service-time">
@@ -176,7 +176,7 @@
                 </span>
             </div> {% endfor %}{% else %}
             <div class="worship-service-container">
-                <div class="sunday-worship" style="background: url('/static/images/sundayservice.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="sunday-worship daily-devotion-card" style="background: url('/static/images/sundayservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
                 </div>
                 <h3>Sunday Worship Service</h3>
                 <span class="service-time">
@@ -185,7 +185,7 @@
                 </span>
             </div>
             <div class="worship-service-container">
-                <div class="revival-service" style="background: url('/static/images/revivalservice.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="revival-service daily-devotion-card" style="background: url('/static/images/revivalservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
                 </div>
                 <h3>Friday Fellowship and Prayer</h3>
                 <span class="service-time">
@@ -194,9 +194,12 @@
                 </span>
             </div>
             <div class="worship-service-container">
-                <div class="bible-study" style="background: url('/static/images/biblestudy.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="bible-study daily-devotion-card" style="background: url('/static/images/biblestudy.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
                 </div>
-                <h3>Wednesday Bible Study</h3>
+                <div class="service-name-zoom">
+                    <h3>Wednesday Bible Study</h3>
+                    <div class="zoom-service"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M1.984 7.506v6.74c.006 1.524 1.361 2.75 3.014 2.745h10.693c.303 0 .549-.225.549-.498v-6.74c-.008-1.523-1.363-2.75-3.014-2.744H2.531c-.302 0-.547.224-.547.497zm14.936 2.63 4.416-2.963c.383-.292.68-.219.68.309v9.036c0 .601-.363.528-.68.309L16.92 13.87v-3.734z"></path></svg></div>
+                </div>
                 <span class="service-time">
                     <p class="time-from">3pm </p> <p>&mdash;</p>
                     <p class="time-to"> 6pm</p>
