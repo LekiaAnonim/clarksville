@@ -99,6 +99,22 @@ TEMPLATES = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://clarksville-production.up.railway.app', 'https://themirrored.com', 'https://www.themirrored.com']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_FRAME_DENY = True
+SECURE_HSTS_SECONDS = 2592000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+SECURE_REFERRER_POLICY = 'same-origin'
+
 WSGI_APPLICATION = "dlclarksville.wsgi.application"
 
 
