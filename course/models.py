@@ -10,6 +10,8 @@ from django.urls import reverse
 # from wagtailmetadata.models import MetadataPageMixin
 # Create your models here.
 class CourseIndexPage(Page):
+    WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'authentication/login.html'
+    WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/all_courses.html'
     intro = RichTextField(blank=True)
     # membership_type = models.ForeignKey(MembershipStatus, null=True, blank=True, on_delete=models.SET_NULL, related_name='member_status')
@@ -62,6 +64,8 @@ class CourseIndexPage(Page):
         return context
 
 class CoursePage(Page):
+    WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'authentication/login.html'
+    WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/course_detail.html'
     course_title = models.CharField(max_length=500, null=True)
     course_description = RichTextField(blank=True)
@@ -116,6 +120,8 @@ class CoursePage(Page):
         return context
     
 class LessonPage(Page):
+    WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'authentication/login.html'
+    WAGTAIL_FRONTEND_LOGIN_URL = 'authentication:login'
     template = 'courses/lesson_detail.html'
     lesson_title = models.CharField(max_length=500, null=True)
     course =  ParentalKey('CoursePage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_lesson')

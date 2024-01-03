@@ -61,6 +61,15 @@ a {
     font-weight: 700;
 }
 
+.navigation-container nav ul li a {
+    font-family: Poppins;
+    color: var(--primary-value);
+    list-style: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .donate-join-container button {
     box-shadow: 10px 20px 40px 0px #00000026;
     border-radius: 20px;
@@ -331,6 +340,10 @@ align-items: center; */
 .know-more {
     min-width: 150px;
     /* border: #fff solid; */
+}
+
+.know-more a {
+    color: #fff;
 }
 
 #about-church .know-more a {

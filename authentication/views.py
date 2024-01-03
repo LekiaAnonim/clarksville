@@ -26,21 +26,22 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from .forms import UserRegisterForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 class SignUpSuccessful(TemplateView):
     template_name = 'authentication/thanks.html'
-class UserDetail(DetailView):
+class UserDetail(LoginRequiredMixin, DetailView):
     model = Member
     template_name = 'courses/profile_detail.html'
-    # login_url = "GasApp:login"
+    login_url = "authentication:login"
     redirect_field_name = "redirect_to"
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['username', 'first_name', 'last_name', 'email', 'country', 'region', 'gender', 'status', 'phone_number', 'residential_address', 'date_of_birth', 'avatar']
     model = Member
     template_name = 'authentication/user_update.html'
-    # login_url = "GasApp:login"
+    login_url = "authentication:login"
     redirect_field_name = "redirect_to"
 class UserLoginView(View):
     """

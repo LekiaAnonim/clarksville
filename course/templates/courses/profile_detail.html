@@ -15,9 +15,18 @@
 
             <div class="course-main-content">
                 <div class="personal-profile-header">
-                    <div class="proile-image"><img src="" alt=""></div>
+                    {% if user.avatar %}
+                    <div class="proile-image"><img src="{% if user.avatar %}{{user.avatar.url}}{% else %}#{% endif %}" alt=""></div>
+                    {% else %}
+                    <div class="user-first-letter-profile">
+                        <h2>{% if user.first_name %}{{user.first_name|make_list|first}}{% else %}{{user.username|make_list|first}}{% endif %}</h2>
+                    </div> {% endif %}
+
                     <div class="person-name-status">
+                        {% if request.user.first_name %}
                         <h1>{{user.first_name}} {{user.last_name}}</h1>
+                        {% else %}
+                        <h1>{{user.username}}</h1> {% endif %}
                         <p>Status: <span> {{user.status}}</span></p>
                     </div>
                 </div>

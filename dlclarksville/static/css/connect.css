@@ -2,60 +2,71 @@
     margin: 0;
     padding: 0;
 }
-.main{
-    width:100%;
+
+.main {
+    width: 100%;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
-.navbar{
+
+.navbar {
     width: 1200px;
     height: 75px;
-    margin:auto;
+    margin: auto;
 }
-.menu{
-    width:400px;
-    float: left;
+
+.menu {
+    width: 400px;
+    /* float: left; */
     height: 70px;
     display: inline-block;
 }
-ul{
+
+ul {
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-ul li{
+
+ul li {
     list-style: none;
     margin-left: 32px;
     margin-top: 27px;
     font-size: 15px;
 }
-ul li a{
+
+ul li a {
     text-decoration: none;
     font-family: arial;
     font-weight: bold;
 }
-ul li a:hover{
-    color:red;
+
+ul li a:hover {
+    color: red;
 }
-#red{
-    color:red;
+
+#red {
+    color: red;
 }
-.left{
-    float:left;
+
+.left {
+    float: left;
 }
-.donate{
-    border:1px solid blue;
-    height:30px;
-    width:80px;  
+
+.donate {
+    border: 1px solid blue;
+    height: 30px;
+    width: 80px;
     display: flex;
     border-radius: 45px;
     margin-top: 20px;
     float: left;
     margin-left: 550px;
 }
-.donate a{
+
+.donate a {
     text-decoration: none;
     text-align: center;
     margin-left: 13px;
@@ -63,19 +74,21 @@ ul li a:hover{
     font-weight: bold;
     font-family: arial;
 }
-.join{
+
+.join {
     border: 1px solid blue;
-    height:30px;
-    width:80px;
+    height: 30px;
+    width: 80px;
     border-radius: 45px;
     margin-top: 20px;
-    display:flex;
-    float:right;
+    display: flex;
+    float: right;
     margin-top: 20px;
     margin-left: 20px;
     background-color: rgb(3, 3, 183);
 }
-.join a{
+
+.join a {
     text-align: center;
     text-decoration: none;
     margin-top: 5px;
@@ -84,7 +97,8 @@ ul li a:hover{
     font-weight: bold;
     font-family: arial;
 }
-.connect{
+
+.connect {
     background-image: url(connect.jpg);
     height: 448px;
     width: 1234px;
@@ -94,8 +108,9 @@ ul li a:hover{
     position: relative;
     flex-shrink: 0;
 }
-.some{
-    position:absolute;
+
+.some {
+    position: absolute;
     background: var(--white, #FFF);
     height: 842px;
     width: 900px;
@@ -106,7 +121,8 @@ ul li a:hover{
     box-shadow: 10px 20px 50px 0px rgba(0, 0, 0, 0.10);
     margin-bottom: 200px;
 }
-.name{
+
+.name {
     text-align: center;
     font-family: Arial;
     color: var(--primary-blue, #000468);
@@ -116,10 +132,11 @@ ul li a:hover{
     line-height: normal;
     text-transform: capitalize;
 }
-.net{
+
+.net {
     width: 131px;
     height: 37px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     color: var(--textblck, #292929);
     font-family: Poppins;
     font-size: 20px;
@@ -130,7 +147,7 @@ ul li a:hover{
     margin-left: 120px;
 }
 
-.your{
+.your {
     display: flex;
     width: 499px;
     padding: 15px 42px;
@@ -141,7 +158,8 @@ ul li a:hover{
     background: var(--fsint, #FAFAFF);
     margin-top: 0px;
 }
-.email{
+
+.email {
     display: flex;
     width: 499px;
     padding: 15px 42px;
@@ -149,9 +167,10 @@ ul li a:hover{
     gap: 10px;
     border-radius: 10px;
     border: 2px solid var(--sss, #F5F5FF);
-    background: var(--fsint, #FAFAFF); 
+    background: var(--fsint, #FAFAFF);
 }
-.number{
+
+.number {
     display: flex;
     width: 499px;
     padding: 15px 42px;
@@ -159,10 +178,11 @@ ul li a:hover{
     gap: 10px;
     border-radius: 10px;
     border: 2px solid var(--sss, #F5F5FF);
-    background: var(--fsint, #FAFAFF); 
-    height:159px;
+    background: var(--fsint, #FAFAFF);
+    height: 159px;
 }
-.send{
+
+.send {
     display: flex;
     width: 126px;
     height: 52px;
@@ -175,9 +195,8 @@ ul li a:hover{
     box-shadow: 10px 20px 44px 0px rgba(0, 0, 0, 0.15);
     /* margin-top: 30px; */
     color: #F5F5FF;
-
 }
 
-#me{
+#me {
     text-decoration: none;
 }
