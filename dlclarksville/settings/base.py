@@ -100,7 +100,7 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://clarksville-production.up.railway.app', 'https://themirrored.com', 'https://www.themirrored.com']
+    'https://clarksville-production.up.railway.app']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
 CSRF_USE_SESSIONS = False
 CSRF_COOKIE_SECURE = True
