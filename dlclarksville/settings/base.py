@@ -128,7 +128,7 @@ WSGI_APPLICATION = "dlclarksville.wsgi.application"
 #     }
 # }
 DATABASES = {
-    "default": dj_database_url.config(default='postgresql://postgres:AD*23eCG54dEe43aCe**4a2ec4*C*ef4@monorail.proxy.rlwy.net:44724/railway', conn_max_age=1800),
+    "default": dj_database_url.config(default='postgresql://postgres:1b1eGe6bebAgD1GFbF6-AFEBFCcbA2A-@roundhouse.proxy.rlwy.net:37661/railway', conn_max_age=1800),
 }
 
 

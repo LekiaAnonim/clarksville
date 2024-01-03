@@ -176,20 +176,20 @@ class LessonPage(Page):
         return next
 
 
-@register_snippet
-class Objective(models.Model):
-    objective = RichTextField(null=True, blank=True)
-    lesson = ParentalKey('LessonPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='lesson_objective')
+# @register_snippet
+# class Objective(models.Model):
+#     objective = RichTextField(null=True, blank=True)
+#     lesson = ParentalKey('LessonPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='lesson_objective')
 
-    panels = [
-        FieldPanel('objective'),
-        FieldPanel('lesson'),
-    ]
-    def __str__(self):
-        return self.objective
+#     panels = [
+#         FieldPanel('objective'),
+#         FieldPanel('lesson'),
+#     ]
+#     def __str__(self):
+#         return self.objective
 
-    class Meta:
-        verbose_name_plural = "Objectives"
+#     class Meta:
+#         verbose_name_plural = "Objectives"
 
 
 @register_snippet
