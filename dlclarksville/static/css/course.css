@@ -858,6 +858,10 @@ margin-top: 10px;
     height: 113px;
     border-radius: 50%;
     margin-right: 30px;
+    max-width: 113px;
+    max-height: 113px;
+    min-width: 113px;
+    min-height: 113px;
 }
 
 .user-first-letter-profile {
@@ -869,6 +873,10 @@ margin-top: 10px;
     border-radius: 50%;
     margin-right: 30px;
     background-color: #7479FF;
+    max-width: 113px;
+    max-height: 113px;
+    min-width: 113px;
+    min-height: 113px;
 }
 
 .user-first-letter-profile h2 {
@@ -933,6 +941,9 @@ margin-top: 10px;
 .person-info-details table td {
     padding: 10px 10px 10px 0;
     max-width: 100%;
+}
+
+.person-info-details table email {
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -1127,23 +1138,24 @@ margin-right: auto; */
         display: none;
     }
     .personal-profile-header .person-name-status h1 {
-        font-size: 25px;
+        font-size: 16px;
+        text-align: left;
     }
     .personal-profile-header .person-name-status p {
-        font-size: 16px;
+        font-size: 14px;
     }
     .person-info-details table .attribute {
-        font-size: 18px;
+        font-size: 14px;
     }
     .person-info-details table .value {
-        font-size: 18px;
+        font-size: 14px;
     }
     .personal-info-card {
         width: 100%;
         margin-right: 5px;
     }
     .course-section-header .welcome-greeting span {
-        font-size: 18px;
+        font-size: 16px;
     }
     .course-section-header .welcome-greeting img {
         width: 22px;
@@ -1163,5 +1175,8 @@ margin-right: auto; */
     }
     .course-cards-container-horizontal .course-title {
         font-size: 20px !important;
+    }
+    .personal-info-header-1 h2 {
+        font-size: 20px;
     }
 }
