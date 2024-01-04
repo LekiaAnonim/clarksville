@@ -7,6 +7,7 @@ from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel, MultiFi
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 @register_snippet
 class Gender(models.Model):
@@ -35,7 +36,7 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=255, null=True, blank=True)
     residential_address = models.CharField(max_length=255, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
-    avatar = models.ImageField(null=True, blank=True)
+    avatar = CloudinaryField("image", null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('authentication:member_profile', kwargs={'username': self.user.username.lower(), 'pk': self.pk})

@@ -314,6 +314,12 @@ align-items: center; */
     justify-content: space-between;
 }
 
+.section-title-container .know-more a {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
 #about-church .section-title {
     width: fit-content;
     max-width: 397px;
@@ -602,6 +608,7 @@ display: block;
     justify-content: center;
     flex-direction: column;
     margin-right: 20px;
+    width: 100%;
 }
 
 .worship-service-container h3 {
@@ -768,10 +775,27 @@ display: block;
     .daily-devotion-container .daily-devotion-card {
         width: 100%;
         max-width: 100%;
-        margin-right: 10px;
+        margin-right: 0;
     }
     .footer-container {
         margin-top: 30px;
+    }
+    .daily-devotion {
+        padding: 50px 10px;
+    }
+    .worship-service-container {
+        margin-right: 0;
+        width: 100%;
+    }
+    footer .bottom {
+        width: 100%;
+        padding: 10px;
+    }
+    footer .bottom div {
+        max-width: 100%;
+    }
+    .about-card-container .about-text p {
+        font-size: 12px;
     }
 }
 

@@ -370,7 +370,7 @@ a {
     color: #fff;
     font-size: 18px;
     float: right;
-    position: absolute;
+    position: relative;
     bottom: 10px;
     right: 10px;
     cursor: pointer;
@@ -394,6 +394,7 @@ a {
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    min-width: 250px;
 }
 
 .course-cards-container .course-content {
@@ -498,7 +499,7 @@ a {
     border-radius: 10px;
     background: linear-gradient(79.7deg, #F5F5F5 34.64%, #D9DAFF 97.99%);
     /* display: flex;
-    align-items: center; */
+align-items: center; */
     margin: 20px;
     max-width: 355px;
     height: 500px;
@@ -548,7 +549,7 @@ a {
 
 
 /* .course-detail-progress {
-    margin-top: 10px;
+margin-top: 10px;
 } */
 
 .course-detail-progress span {
@@ -926,11 +927,14 @@ a {
 
 .person-info-details table {
     border-collapse: collapse;
-    width: 100%;
+    max-width: 100%;
 }
 
 .person-info-details table td {
     padding: 10px 10px 10px 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .person-info-details table tr {
@@ -990,7 +994,7 @@ a {
     max-width: 900px;
     overflow-x: scroll;
     /* margin-left: auto;
-    margin-right: auto; */
+margin-right: auto; */
     overflow-y: hidden;
 }
 
@@ -1122,11 +1126,42 @@ a {
     .next-previous-card p {
         display: none;
     }
-}
-
-
-}
-
-}
-
+    .personal-profile-header .person-name-status h1 {
+        font-size: 25px;
+    }
+    .personal-profile-header .person-name-status p {
+        font-size: 16px;
+    }
+    .person-info-details table .attribute {
+        font-size: 18px;
+    }
+    .person-info-details table .value {
+        font-size: 18px;
+    }
+    .personal-info-card {
+        width: 100%;
+        margin-right: 5px;
+    }
+    .course-section-header .welcome-greeting span {
+        font-size: 18px;
+    }
+    .course-section-header .welcome-greeting img {
+        width: 22px;
+        height: 23.02px;
+    }
+    .course-cards-container-horizontal .course-card {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .course-cards-container-horizontal .course-card .course-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    .course-cards-container-horizontal .course-card .course-image img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .course-cards-container-horizontal .course-title {
+        font-size: 20px !important;
+    }
 }

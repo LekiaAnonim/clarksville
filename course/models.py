@@ -6,6 +6,7 @@ from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from authentication.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 # from authentication.models import MembershipStatus
 # from wagtailmetadata.models import MetadataPageMixin
 # Create your models here.
@@ -52,7 +53,7 @@ class CoursePage(Page):
     template = 'courses/course_detail.html'
     course_title = models.CharField(max_length=500, null=True, blank=True)
     course_description = RichTextField(blank=True)
-    banner = models.ImageField(null=True, blank=True)
+    banner = CloudinaryField("image", null=True, blank=True)
     membership_category = ParentalKey('CourseIndexPage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_membership')
 
     content_panels = Page.content_panels + [

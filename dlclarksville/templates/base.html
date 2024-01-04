@@ -35,8 +35,9 @@
         </div>
         <div class="donate-join-container">
             <a href="#"><button class="donate" type="button">Donate</button></a>
-            <a href="{% url 'authentication:signup' %}"><button class="join" type="button">Join us</button></a>
-            <a href="{% url 'authentication:login' %}"><button class="join" type="button">Login</button></a>
+            <a href="{% url 'authentication:signup' %}"><button class="join" type="button">Join us</button></a> {% if user.is_authenticated %}
+            <a href="{% url 'authentication:logout' %}"><button style="margin-top: 10px; color: #fff;" class="donate" type="button">Logout</button></a> {% else %}
+            <a href="{% url 'authentication:login' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Login</button></a>{% endif %}
         </div>
         <div class="hamburger" onclick="displaySideMenu()">
             <span class="ham ham-1"></span>
@@ -58,7 +59,7 @@
             </ul>
             <div class="donate-join-container" style="display: block;">
                 <a href="{{ settings.home.ImportantPages.page_url.donate }}"><button class="donate" type="button">Donate</button></a>
-                <a href="{% url 'authentication:signup' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Join us</button></a> {% if user %}
+                <a href="{% url 'authentication:signup' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Join us</button></a> {% if user.is_authenticated %}
                 <a href="{% url 'authentication:logout' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Logout</button></a> {% else %}
                 <a href="{% url 'authentication:login' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Login</button></a>{% endif %}
             </div>

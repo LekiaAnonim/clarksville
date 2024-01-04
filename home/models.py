@@ -8,21 +8,22 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.forms.panels import FormSubmissionsPanel
+from cloudinary.models import CloudinaryField
 
 class HomePage(Page):
     template = 'home/home_page.html'
     max_count = 1
     # hero_section_title = models.CharField(max_length=500, null=True)
     hero_section_text = RichTextField(null=True, blank=True)
-    slider_image_1 = models.ImageField(null=True, blank=True)
-    slider_image_2 = models.ImageField(null=True, blank=True)
-    slider_image_3 = models.ImageField(null=True, blank=True)
-    slider_image_4 = models.ImageField(null=True, blank=True)
-    slider_image_5 = models.ImageField(null=True, blank=True)
-    about_church_background_image = models.ImageField(null=True, blank=True)
+    slider_image_1 = CloudinaryField("image", null=True, blank=True)
+    slider_image_2 = CloudinaryField("image", null=True, blank=True)
+    slider_image_3 = CloudinaryField("image", null=True, blank=True)
+    slider_image_4 = CloudinaryField("image", null=True, blank=True)
+    slider_image_5 = CloudinaryField("image", null=True, blank=True)
+    about_church_background_image = CloudinaryField("image", null=True, blank=True)
     about_church_title_1 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_1 = RichTextField(null=True, blank=True)
-    about_church_image_1 = models.ImageField(null=True, blank=True)
+    about_church_image_1 = CloudinaryField("image", null=True, blank=True)
     about_church_title_2 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_2 = RichTextField(null=True, blank=True)
     # about_church_image_2 = models.ImageField(null=True)
@@ -31,7 +32,7 @@ class HomePage(Page):
     # about_church_image_3 = models.ImageField(null=True)
     about_church_title_4 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_4 = RichTextField(null=True, blank=True)
-    about_church_image_4 = models.ImageField(null=True, blank=True)
+    about_church_image_4 = CloudinaryField("image", null=True, blank=True)
 
     content_panels = Page.content_panels + [
         # FieldPanel('hero_section_title'),
@@ -75,7 +76,7 @@ class WorshipService(models.Model):
     service_day = models.CharField(max_length=500, null=True, blank=True)
     time_from = models.CharField(max_length=500, null=True, blank=True)
     time_to = models.CharField(max_length=500, null=True, blank=True)
-    service_image = models.ImageField(null=True, blank=True)
+    service_image = CloudinaryField("image", null=True, blank=True)
     # join_via_facebook_live_link = models.URLField(null=True, blank=True)
     # join_via_youtube_live_link = models.URLField(null=True, blank=True)
     # join_via_zoom_live_link = models.URLField(null=True, blank=True)
@@ -97,7 +98,7 @@ class WorshipService(models.Model):
 class DailyDevotion(models.Model):
     devotion_type = models.CharField(max_length=500, null=True, blank=True)
     devotion_url = models.URLField(null=True, blank=True)
-    devotion_image = models.ImageField(null=True, blank=True)
+    devotion_image = CloudinaryField("image", null=True, blank=True)
 
     panels = [
         FieldPanel('devotion_type'),
@@ -214,7 +215,7 @@ class SiteContact(BaseSiteSetting):
 
 @register_setting
 class SiteLogo(BaseSiteSetting):
-    logo = models.ImageField(null=True, blank=True)
+    logo = CloudinaryField("image", null=True, blank=True)
 
 @register_setting
 class ImportantPages(BaseSiteSetting):

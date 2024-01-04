@@ -130,7 +130,8 @@
                     </div>
                 </div> -->
                 <div class="take-a-course">
-                    <a href="/course-index-page/"><button>Take Course</button></a>
+                    {% for item in menu.menu_items.all %} {% if item.link_text == user.status %}
+                    <a href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}><button>Take Course</button></a> {% endif %} {% endfor %}
                 </div>
             </div>
         </div>{% endblock %}

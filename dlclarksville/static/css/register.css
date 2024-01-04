@@ -37,6 +37,8 @@
     font-weight: 500;
     text-transform: capitalize;
     max-width: 695px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 .registration-page .new h1 {
@@ -208,7 +210,7 @@
 }
 
 .registration-page #next {
-    height: 40px;
+    /* height: 40px; */
     width: 100px;
     color: white;
     background-color: var(--ACCENT-LITE, #7479FF);
@@ -217,6 +219,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    padding: 15px 12px;
 }
 
 .registration-page #a-next {
@@ -307,4 +310,16 @@ textarea {
     border: 2px solid #e0e0e0;
     background: #e0e0e0;
     resize: none;
+}
+
+@media screen and (max-width: 500px) {
+    .registration-page .new {
+        height: 300px;
+    }
+    .registration-page .new h1 {
+        font-size: 34px;
+    }
+    .registration-page .new p {
+        font-size: 14px;
+    }
 }

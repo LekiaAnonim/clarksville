@@ -99,13 +99,13 @@
                                         <h2 class="course-title">{{course.course_title|title}}</h2>
                                         <p class="course-description">{{course.course_description|richtext|truncatewords:18}}
                                         </p>
-                                        <div class="start-resume-container">
-                                            <a href="{% pageurl course %}"><button class="resume">Retake</button></a>
-                                        </div>
+
                                         <div class="course-progress">
                                             <progress id="course_progress" max="100" value="100">100%</progress><span>100%</span>
                                         </div>
-
+                                        <div class="start-resume-container">
+                                            <a href="{% pageurl course %}"><button class="resume">Retake</button></a>
+                                        </div>
                                     </div>
                                 </div>
                                 {% endfor %} {% else %}
