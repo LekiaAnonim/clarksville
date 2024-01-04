@@ -23,9 +23,9 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = ["clarksville-production.up.railway.app"]
 
 cloudinary.config( 
-  cloud_name = env('CLOUD_NAME'), 
-  api_key = env("CLOUD_API_KEY"), 
-  api_secret = env("CLOUD_API_SECRET") 
+  cloud_name = "dum5thngj", 
+  api_key = "649654183492732", 
+  api_secret = "DnhztD3mYzhHh33lb_rpJY8s7BE"
 )
 
 
