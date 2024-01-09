@@ -183,6 +183,20 @@ class About(Page):
         FieldPanel('general_superintendent'),
     ]
 
+class IamNew(Page):
+    max_count = 1
+    template = 'home/new.html'
+
+    caption_title = RichTextField(null=True, blank=True)
+    caption_text = RichTextField(null=True, blank=True)
+    banner = CloudinaryField("image", null=True, blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('caption_title'),
+        FieldPanel('caption_text'),
+        FieldPanel('banner'),
+    ]
+
 class Donate(Page):
     max_count = 1
     template = 'home/donate.html'
