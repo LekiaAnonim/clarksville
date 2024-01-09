@@ -412,19 +412,23 @@ align-items: center; */
 }
 
 .about-card-11 {
-    background: #7479FF73;
+    background: #4d53ff;
+    opacity: 0.8;
 }
 
 .about-card-12 {
-    background: #FF9F9F80;
+    background: #fd5f5f;
+    opacity: 0.8;
 }
 
 .about-card-21 {
-    background: #000000B2;
+    background: #000000;
+    opacity: 0.8;
 }
 
 .about-card-22 {
-    background: #FBFBFB80;
+    background: #026838;
+    opacity: 0.8;
 }
 
 
@@ -557,7 +561,7 @@ input[type='submit'] {
     display: flex;
     align-items: center;
     margin-top: 100px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .daily-devotion-container h2 {
@@ -567,7 +571,7 @@ input[type='submit'] {
 
 .daily-devotion-container .daily-devotion-card {
     width: 100%;
-    max-width: 354px;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -796,6 +800,9 @@ display: block;
     }
     .about-card-container .about-text p {
         font-size: 12px;
+    }
+    .daily-devotion-container {
+        flex-wrap: wrap;
     }
 }
 

@@ -14,7 +14,7 @@
         <div class="hero-container">
             <div class="hero-text-cta">
                 <h1>
-                    Welcome To <span>Deeper Life Bible</span> Church
+                    {{page.hero_section_title}}
                 </h1>
                 <p class="hero-text">
                     {{page.hero_section_text|richtext}}
@@ -49,7 +49,7 @@
             </div>
         </div>
     </section>
-    <section id="about-church" style="{% if page.about_church_background_image %} background: url('{{page.about_church_background_image.url}}') {% else %} background: url('/static/images/Rectangle\ 87.jpg'){% endif %}; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+    <section id="about-church" style="{% if page.about_church_background_image %} background: url('{{page.about_church_background_image.url}}') {% else %} background: url('/static/images/Rectangle 87.jpg'){% endif %}; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
         <div class="section-title-container">
             <div class="section-title">
                 <h1><span>About</span> Our Church</h1>
@@ -61,7 +61,7 @@
         <div class="about-section-main-container">
             <div class="about-card-container">
                 <div class="about-card-1 about-card-11">
-                    <img src="{% if page.about_church_image_1 %}{{page.about_church_image_1.url}} {% else %}/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg {% endif %}" alt="">
+                    <img src="{% if page.about_church_image_1 %}{{page.about_church_image_1.url}} {% else %}/static/images/choirbro.jpg {% endif %}" alt="">
                     <div class="about-text">
                         <h2>{% if page.about_church_title_1 %}{{page.about_church_title_1|title}}{% else %}Deeper Relationships, Deeper Understanding{% endif %}</h2>
                         <p>{% if page.about_church_text_1 %}{{page.about_church_text_1|richtext}}{% else %}Dive into the scriptures and cultivate profound relationships with Christ, deepening your understanding of the Word in a transformative journey of
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="about-card-1 about-card-22">
-                    <img src="{% if page.about_church_image_4 %}{{page.about_church_image_4.url}} {% else %}/static/images/jon-tyson--0o9dgxEu5Q-unsplash.jpg{% endif %}" alt="">
+                    <img src="{% if page.about_church_image_4 %}{{page.about_church_image_4.url}} {% else %}/static/images/sittinggbagada.jpg{% endif %}" alt="">
                     <div class="about-text">
                         <h2>{% if page.about_church_title_4 %}{{page.about_church_title_4|title}}{% else %}Growth Mindset Discipleship Training {% endif %}</h2>
                         <p>{% if page.about_church_text_4 %}{{page.about_church_text_4|richtext}}{% else %}Embrace a growth mindset through our dynamic discipleship training, tailored for both seasoned believers and newcomers. Accept Christ today and embark
@@ -98,7 +98,7 @@
             </div>
         </div>
     </section>
-    <section id="redemption-section" class="redemption-section" style="background: url('/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+    <section id="redemption-section" class="redemption-section" style="background: url('/static/images/gbagada.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
         <div class="redemption-section-container">
             <div class="redemption-section-text-container">
                 <div class="section-title">
@@ -111,9 +111,9 @@
             <div class="union-image"><img src="/static/images/Union.png" alt=""></div>
         </div>
     </section>
-    <section class="subscribe-to-newsletter">
+    <!-- <section class="subscribe-to-newsletter">
         {% include 'home/subscribe_form.html' %}
-    </section>
+    </section> -->
     <section class="daily-devotion" style="background: url('/static/images/Rectangle\ 44.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
         <div class="section-title-container">
             <div class="section-title">
@@ -176,7 +176,7 @@
                 </span>
             </div> {% endfor %}{% else %}
             <div class="worship-service-container">
-                <div class="sunday-worship daily-devotion-card" style="background: url('/static/images/sundayservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
+                <div class="sunday-worship daily-devotion-card" style="background: url('/static/images/sundayservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -10px;">
                 </div>
                 <h3>Sunday Worship Service</h3>
                 <span class="service-time">
@@ -185,16 +185,7 @@
                 </span>
             </div>
             <div class="worship-service-container">
-                <div class="revival-service daily-devotion-card" style="background: url('/static/images/revivalservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
-                </div>
-                <h3>Friday Fellowship and Prayer</h3>
-                <span class="service-time">
-                    <p class="time-from">4pm </p> <p>&mdash;</p>
-                    <p class="time-to"> 6pm</p>
-                </span>
-            </div>
-            <div class="worship-service-container">
-                <div class="bible-study daily-devotion-card" style="background: url('/static/images/biblestudy.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -30px;">
+                <div class="bible-study daily-devotion-card" style="background: url('/static/images/biblestudy.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -10px;">
                 </div>
                 <div class="service-name-zoom">
                     <h3>Wednesday Bible Study</h3>
@@ -204,7 +195,17 @@
                     <p class="time-from">3pm </p> <p>&mdash;</p>
                     <p class="time-to"> 6pm</p>
                 </span>
-            </div>{% endif %}
+            </div>
+            <div class="worship-service-container">
+                <div class="revival-service daily-devotion-card" style="background: url('/static/images/revivalservice.png'); background-repeat: no-repeat; background-size: cover; background-position: 0 -10px;">
+                </div>
+                <h3>Friday Fellowship and Prayer</h3>
+                <span class="service-time">
+                    <p class="time-from">4pm </p> <p>&mdash;</p>
+                    <p class="time-to"> 6pm</p>
+                </span>
+            </div>
+            {% endif %}
 
         </div>
     </section>{% endblock content %}

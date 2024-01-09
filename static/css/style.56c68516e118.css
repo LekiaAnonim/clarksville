@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: Poppins;
-    src: url('/static/font/Poppins-Regular.ttf');
+    src: url("/static/font/Poppins-Regular.093ee89be9ed.ttf");
 }
 
 @font-face {
     font-family: Roboto;
-    src: url('/static/font/static/RobotoSerif/RobotoSerif-Regular.ttf');
+    src: url("/static/font/static/RobotoSerif/RobotoSerif-Regular.2fde5a4a0cef.ttf");
 }
 
 * {
@@ -412,23 +412,19 @@ align-items: center; */
 }
 
 .about-card-11 {
-    background: #4d53ff;
-    opacity: 0.8;
+    background: #7479FF73;
 }
 
 .about-card-12 {
-    background: #fd5f5f;
-    opacity: 0.8;
+    background: #FF9F9F80;
 }
 
 .about-card-21 {
-    background: #000000;
-    opacity: 0.8;
+    background: #000000B2;
 }
 
 .about-card-22 {
-    background: #026838;
-    opacity: 0.8;
+    background: #FBFBFB80;
 }
 
 

@@ -13,7 +13,7 @@ from cloudinary.models import CloudinaryField
 class HomePage(Page):
     template = 'home/home_page.html'
     max_count = 1
-    # hero_section_title = models.CharField(max_length=500, null=True)
+    hero_section_title = models.CharField(max_length=500, null=True)
     hero_section_text = RichTextField(null=True, blank=True)
     slider_image_1 = CloudinaryField("image", null=True, blank=True)
     slider_image_2 = CloudinaryField("image", null=True, blank=True)
@@ -35,7 +35,7 @@ class HomePage(Page):
     about_church_image_4 = CloudinaryField("image", null=True, blank=True)
 
     content_panels = Page.content_panels + [
-        # FieldPanel('hero_section_title'),
+        FieldPanel('hero_section_title'),
         FieldPanel('hero_section_text'),
         FieldPanel('slider_image_1'),
         FieldPanel('slider_image_2'),

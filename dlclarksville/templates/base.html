@@ -34,7 +34,7 @@
             <img src="/static/images/dlbc.png" alt="">
         </div>
         <div class="donate-join-container">
-            <a href="#"><button class="donate" type="button">Donate</button></a>
+            <a href="{{ settings.home.ImportantPages.page_url.donate }}"><button class="donate" type="button">Donate</button></a>
             <a href="{% url 'authentication:signup' %}"><button class="join" type="button">Join us</button></a> {% if user.is_authenticated %}
             <a href="{% url 'authentication:logout' %}"><button style="margin-top: 10px; color: #fff;" class="donate" type="button">Logout</button></a> {% else %}
             <a href="{% url 'authentication:login' %}"><button style="margin-top: 10px; color: #fff;" class="join" type="button">Login</button></a>{% endif %}
@@ -91,36 +91,36 @@
                 </div>
 
             </div>
-            <div class="get footer-container ">
-                <div id="touch ">
+            <div class="get footer-container">
+                <div id="touch">
                     <h4>Get In Touch</h4>
                 </div>
-                <div class="ohio ">
-                    <svg xmlns="http://www.w3.org/2000/svg " width="24 " height="24 " viewBox="0 0 24 24 " fill="none ">
-                        <path fill-rule="evenodd " clip-rule="evenodd " d="M12 2C15.87 2 19 5.13 19 9C19 14.25 12 22 12 22C12 22 5 14.25 5 9C5 5.13 8.13 2 12 2ZM7 9C7 11.85 9.92 16.21 12 18.88C14.12 16.19 17 11.88 17 9C17 6.24 14.76 4 12 4C9.24 4 7
+                <div class="ohio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C15.87 2 19 5.13 19 9C19 14.25 12 22 12 22C12 22 5 14.25 5 9C5 5.13 8.13 2 12 2ZM7 9C7 11.85 9.92 16.21 12 18.88C14.12 16.19 17 11.88 17 9C17 6.24 14.76 4 12 4C9.24 4 7
                 6.24 7 9ZM12 11.5C10.6193 11.5 9.5 10.3807 9.5 9C9.5 7.61929 10.6193 6.5 12 6.5C13.3807 6.5 14.5 7.61929 14.5 9C14.5 10.3807 13.3807 11.5 12 11.5Z " fill="#000468 "/>
                       </svg>
                     <address><p>{{ settings.home.SiteContact.address }}</p> </address>
                 </div>
-                <div id="our ">
-                    <svg xmlns="http://www.w3.org/2000/svg " width="24 " height="24 " viewBox="0 0 24 24 " fill="none ">
+                <div id="our">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill-rule="evenodd " clip-rule="evenodd " d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z " fill="#000468 "/>
                       </svg>
-                    <a href="mailto:{{ settings.home.SiteContact.email1 }} ">{{ settings.home.SiteContact.email1 }}</a>
+                    <a href="mailto:{{ settings.home.SiteContact.email1 }}">{{ settings.home.SiteContact.email1 }}</a>
                 </div>
-                <div id="message ">
-                    <svg xmlns="http://www.w3.org/2000/svg " width="24 " height="24 " viewBox="0 0 24 24 " fill="none ">
-                        <path fill-rule="evenodd " clip-rule="evenodd " d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5
+                <div id="message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5
                 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06
                 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z " fill="#000468 "/>
                       </svg>
-                    <a href="tel:{{ settings.home.SiteContact.phone2 }} ">{{ settings.home.SiteContact.phone2 }}</a>
+                    <a href="tel:{{ settings.home.SiteContact.phone2 }}">{{ settings.home.SiteContact.phone2 }}</a>
                 </div>
 
             </div>
-            <div class="in footer-container ">
-                <div class="dolor ">
-                    <svg xmlns="http://www.w3.org/2000/svg " width="179 " height="40 " viewBox="0 0 179 40 " fill="none ">
+            <div class="in footer-container">
+                <div class="dolor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="179" height="40" viewBox="0 0 179 40" fill="none">
                         <path d="M159.09 0H158.999C148.002 0 139.088 8.77365 139.088 19.5965V19.686C139.088 30.5088 148.002 39.2824 158.999 39.2824H159.09C170.086 39.2824 179 30.5088 179 19.686V19.5965C179 8.77365 170.086 0 159.09 0Z " fill="#111067 "/>
                         <path d="M148.606 13.0561C148.08 12.5758 147.818 11.9812 147.818 11.2739C147.818 10.5665 148.081 9.94577 148.606 9.46408C149.131 8.98376 149.808 8.74292 150.637 8.74292C151.467 8.74292 152.117 8.98376 152.641 9.46408C153.167
                 9.94439 153.428 10.5486 153.428 11.2739C153.428 11.9991 153.166 12.5758 152.641 13.0561C152.115 13.5364 151.448 13.7773 150.637 13.7773C149.826 13.7773 149.131 13.5364 148.606 13.0561ZM152.987 15.8114V30.5373H148.259V15.8114H152.987Z
@@ -148,7 +148,7 @@
                 21.5905 58.7082 21.5135 58.3475 21.3717C58.8858 23.0934 60.4897 24.3554 62.4026 24.4132C61.235 25.6078 59.5934 26.3496 57.7784 26.3496C56.6499 26.3496 55.5886 26.062 54.6685 25.5596C56.8792 27.4424 59.7612 28.5791 62.9144 28.5791C69.8823 28.5791
                 75.5302 23.0205 75.5302 16.1626C75.5302 15.7855 75.5134 15.4111 75.4784 15.0423C76.6307 14.595 77.5452 13.6784 77.9773 12.5306H77.9731Z " fill="white "/>
                         <path d="M39.9112 19.6419C39.9112 29.5619 32.4399 37.763 22.7341 39.0939C21.8266 39.2177 20.8981 39.2824 19.9556 39.2824C18.8677 39.2824 17.7994 39.1971 16.759 39.032C7.25734 37.5263 0 29.4174 0 19.6419C0 8.79426 8.93534 0 19.957
-                0C30.9786 0 39.914 8.79426 39.914 19.6419H39.9112Z " fill="#121167 "/>
+                0C30.9786 0 39.914 8.79426 39.914 19.6419H39.9112Z " fill="#121167"/>
                         <path d="M22.7343 15.7717V20.0505H28.1123L27.2607 25.8143H22.7343V39.0937C21.8268 39.2176 20.8983 39.2823 19.9558 39.2823C18.8679 39.2823 17.7996 39.197 16.7592 39.0318V25.8143H11.7993V20.0505H16.7592V14.8152C16.7592 11.5673
                 19.4342 8.93311 22.7357 8.93311V8.93586C22.7455 8.93586 22.7538 8.93311 22.7636 8.93311H28.1137V13.9179H24.6178C23.5789 13.9179 22.7357 14.7478 22.7357 15.7703L22.7343 15.7717Z " fill="white "/>
                     </svg>
@@ -156,9 +156,9 @@
                         God loves a cheerful giver. Your donations are used exclusively for the propagation of the gospel.
                     </p>
                 </div>
-                <div class="us ">
-                    <a href="{{ settings.home.ImportantPages.page_url.donate }} ">
-                        <button class="us-a ">DONATE TO US</button>
+                <div class="us">
+                    <a href="{{ settings.home.ImportantPages.page_url.donate }}">
+                        <button class="us-a">DONATE TO US</button>
                     </a>
                 </div>
             </div>
