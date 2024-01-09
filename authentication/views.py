@@ -110,7 +110,7 @@ class UserRegisterView(View):
                 'protocol': 'http',
             }
             )
-            from_email = 'prosperlekia@gmail.com'
+            from_email = 'clarksvillesdlbc@gmail.com'
             to_email = register_form.cleaned_data.get('email')
             email = EmailMessage(
                 mail_subject, message, from_email, to=[to_email]
