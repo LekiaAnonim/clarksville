@@ -712,14 +712,22 @@ display: block;
     .daily-devotion-container {
         flex-wrap: wrap;
     }
-}
-
-@media screen and (max-width: 890px) {
     .navigation-container {
         display: none;
     }
     .donate-join-container {
         display: none;
+    }
+    .hamburger {
+        display: flex;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .i-am-new .boy {
+        flex-wrap: wrap;
+        margin-bottom: 30px;
     }
 }
 
@@ -756,10 +764,6 @@ display: block;
         margin-top: 20px;
         padding-left: 20px;
         margin-right: 20px;
-    }
-    .hamburger {
-        display: flex;
-        margin-top: 5px;
     }
     .daily-devotion-container div {
         max-width: 100%;

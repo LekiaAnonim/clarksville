@@ -26,7 +26,7 @@
     height: 72px;
     width: 250px;
     position: absolute;
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 .i-am-new .dem h3 {
@@ -45,26 +45,28 @@
 .i-am-new .boy {
     margin-top: 80px;
     position: relative;
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 .i-am-new .boy img {
-    float: left;
-    /* position: relative; */
+    width: 100%;
 }
 
 .i-am-new .lam {
-    width: 620px;
-    Height: 132px;
-    margin-left: 550px;
+    width: 100%;
+    Height: auto;
+    /* margin-left: 550px; */
     /* position: absolute; */
 }
 
 .i-am-new .rap {
     color: rgba(0, 4, 104, 1);
     font-weight: 350px;
-    font-size: 50px;
-    line-height: 44px;
-    width: 700px;
+    font-size: 30px;
+    /* line-height: 44px; */
+    /* width: 700px; */
 }
 
 .i-am-new #nop {
@@ -74,7 +76,7 @@
     border-radius: 50px;
     background-color: rgb(3, 3, 183);
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .i-am-new .hello {
@@ -86,9 +88,9 @@
 }
 
 .christ {
-    height: 330px;
+    height: fit-content;
     display: inline-block;
-    margin-left: 25px;
+    width: 100%;
 }
 
 .i-am-new .christ img {
@@ -114,13 +116,15 @@
 
 .i-am-new .spiritual {
     background-image: url('/static/images/spirit.png');
-    height: 400px;
+    min-height: 400px;
     margin-bottom: 40px;
     margin-top: 90px;
-    margin-left: 70px;
-    margin-right: 80px;
+    /* margin-left: 70px;
+    margin-right: 80px; */
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
+    height: fit-content;
 }
 
 .i-am-new #mens {
