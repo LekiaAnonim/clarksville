@@ -12,7 +12,7 @@
 
 .i-am-new .pix {
     background-image: url(/static/images/up.jpg);
-    height: 435px;
+    min-height: 435px;
     width: 100%;
     /* margin-left: 40px;
     margin-right: 20px; */
@@ -75,8 +75,8 @@
     width: 100px;
     border-radius: 50px;
     background-color: rgb(3, 3, 183);
-    margin-top: 30px;
-    margin-left: 10px;
+    margin-top: 15px;
+    /* margin-left: 10px; */
 }
 
 .i-am-new .hello {
