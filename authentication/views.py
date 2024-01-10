@@ -27,6 +27,7 @@ from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from .forms import UserRegisterForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .token import account_activation_token
 # Create your views here.
 
 class SignUpSuccessful(TemplateView):
@@ -106,8 +107,8 @@ class UserRegisterView(View):
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                'token': default_token_generator.make_token(user),
-                'protocol': 'http',
+                'token': account_activation_token.make_token(user),
+                # 'protocol': 'http',
             }
             )
             from_email = 'clarksvilledlbc@gmail.com'
@@ -158,7 +159,7 @@ def activate(request, uidb64, token):
         user = User._default_manager.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
-    if user is not None and default_token_generator.check_token(user, token):
+    if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
         login(request, user)
