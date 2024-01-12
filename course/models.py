@@ -69,7 +69,7 @@ class CoursePage(Page):
     
     def get_context(self, request, *args, **kwargs):
         context = super(CoursePage, self).get_context(request, *args, **kwargs)
-        
+        resources = Resource.objects.filter(course__course_title = self.course_title)
         course_lessons = LessonPage.objects.live().filter(course__course_title = self.course_title)
         member = []
         
@@ -101,6 +101,7 @@ class CoursePage(Page):
         context["lesson_percent_complete"] = lesson_percent_complete
         context["resume_page"] = resume_page
         context["completed_lessons"] =completed_lessons
+        context["resources"] =resources
         return context
     
 class LessonPage(Page):
@@ -195,12 +196,14 @@ class LessonPage(Page):
 
 @register_snippet
 class Resource(models.Model):
+    course =  ParentalKey('CoursePage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_resource')
     resource_title = models.CharField(max_length=500, null=True, blank=True)
-    upload_resource = models.FileField()
+    upload_resource = models.FileField(null=True)
 
     panels = [
         FieldPanel('resource_title'),
         FieldPanel('upload_resource'),
+        FieldPanel('course'),
     ]
     def __str__(self):
         return self.resource_title
