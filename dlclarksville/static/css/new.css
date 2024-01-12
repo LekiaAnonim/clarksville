@@ -11,13 +11,15 @@
 }
 
 .i-am-new .pix {
-    background-image: url(/static/images/up.jpg);
+    background-image: url(/static/images/dark_ss.jpg);
     min-height: 435px;
     width: 100%;
     /* margin-left: 40px;
     margin-right: 20px; */
-    position: relative;
+    /* position: relative; */
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -50px;
 }
 
 .i-am-new .dem {

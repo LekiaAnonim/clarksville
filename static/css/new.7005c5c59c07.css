@@ -11,7 +11,7 @@
 }
 
 .i-am-new .pix {
-    background-image: url(/static/images/dark_ss.jpg);
+    background-image: url("/static/images/dark_ss.773c062b8595.jpg");
     min-height: 435px;
     width: 100%;
     /* margin-left: 40px;
@@ -115,7 +115,7 @@
 }
 
 .i-am-new .spiritual {
-    background-image: url('/static/images/spirit.png');
+    background-image: url("/static/images/spirit.e154e3a14246.png");
     min-height: 400px;
     margin-bottom: 40px;
     margin-top: 90px;
