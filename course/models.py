@@ -198,7 +198,7 @@ class LessonPage(Page):
 class Resource(models.Model):
     course =  ParentalKey('CoursePage', null=True, blank=True, on_delete=models.SET_NULL, related_name='course_resource')
     resource_title = models.CharField(max_length=500, null=True, blank=True)
-    upload_resource = models.FileField(null=True)
+    upload_resource = models.URLField(null=True, blank=True, help_text='Add the to the location of the file. E.g. Google Drive')
 
     panels = [
         FieldPanel('resource_title'),
