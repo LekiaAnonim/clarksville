@@ -77,7 +77,7 @@ class CustomUserEditForm(UserEditForm):
     gender = forms.ModelChoiceField(queryset=Gender.objects, required=False, label=_("Gendertatus"))
     phone_number = forms.CharField(required=False, label=_("Phone number"))
     residential_address = forms.CharField(required=False, label=_("Residential address"))
-    date_of_birth = forms.DateField()
+    date_of_birth = forms.DateField(required=False)
     avatar = forms.ImageField(required=False, label=_("Avatar"))
 
 
@@ -93,5 +93,5 @@ class CustomUserCreationForm(UserCreationForm):
     gender = forms.ModelChoiceField(queryset=Gender.objects, required=False, label=_("Gender"))
     phone_number = forms.CharField(required=False, label=_("Phone number"))
     residential_address = forms.CharField(required=False, label=_("Residential address"))
-    date_of_birth = forms.DateField()
+    date_of_birth = forms.DateField(required=False)
     avatar = forms.ImageField(required=False, label=_("Avatar"))

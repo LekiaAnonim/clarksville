@@ -1,161 +1,106 @@
-*{
+.i-am-new * {
     margin: 0;
     padding: 0;
 }
-.main{
-    width:100%;
+
+.i-am-new {
+    width: 100%;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    padding: 20px;
 }
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin:auto;
-}
-.menu{
-    width:400px;
-    float:left;
-    height: 70px;
-    display: inline-block;
-}
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-ul li{
-    list-style: none;
-    margin-left: 32px;
-    margin-top: 27px;
-    font-size: 15px;
-}
-ul li a{
-    text-decoration: none;
-    font-family: arial;
-    font-weight: bold;
-}
-ul li a:hover{
-    color:red;
-}
-#red{
-    color:red;
-}
-.left{
-    float:left;
-}
-.donate{
-    border:1px solid blue;
-    height:30px;
-    width:80px;  
-    display: flex;
-    border-radius: 45px;
-    margin-top: 20px;
-    float: left;
-    margin-left: 550px;
-}
-.donate a{
-    text-decoration: none;
-    text-align: center;
-    margin-left: 13px;
-    margin-top: 5px;
-    font-weight: bold;
-    font-family: arial;
-}
-.join{
-    border: 1px solid blue;
-    height:30px;
-    width:80px;
-    border-radius: 45px;
-    margin-top: 20px;
-    display:flex;
-    float:right;
-    margin-top: 20px;
-    margin-left: 20px;
-    background-color: rgb(3, 3, 183);
-}
-.join a{
-    text-align: center;
-    text-decoration: none;
-    margin-top: 5px;
-    margin-left: 11px;
-    color: white;
-    font-weight: bold;
-    font-family: arial;
-}
-.pix{
-    background-image: url(up.jpg);
-    height:435px;
+
+.i-am-new .pix {
+    background-image: url(/static/images/dark_ss.jpg);
+    min-height: 435px;
     width: 100%;
-    margin-left: 40px;
-    margin-right: 20px;
-    position: relative;
+    /* margin-left: 40px;
+    margin-right: 20px; */
+    /* position: relative; */
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -50px;
 }
-.dem{
-    color:white;
+
+.i-am-new .dem {
     margin-top: 120px;
     font-weight: bold;
-    font-size: 50px;
     height: 72px;
     width: 250px;
     position: absolute;
-    margin-left: 150px;
+    margin-left: 100px;
 }
-#me{
+
+.i-am-new .dem h3 {
+    color: white;
+    font-size: 50px;
+}
+
+.i-am-new #me {
     font-size: 15px;
     font-weight: bold;
     margin-top: 15px;
     font-family: arial;
+    color: #fff;
 }
-.boy{
+
+.i-am-new .boy {
     margin-top: 80px;
     position: relative;
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
-.boy img{
-    float:left; 
-    /* position: relative; */
+
+.i-am-new .boy img {
+    width: 100%;
 }
-.lam{
-    width: 620px;
-    Height:132px;
-    margin-left:550px;
+
+.i-am-new .lam {
+    width: 100%;
+    Height: auto;
+    /* margin-left: 550px; */
     /* position: absolute; */
 }
-.rap{
+
+.i-am-new .rap {
     color: rgba(0, 4, 104, 1);
     font-weight: 350px;
-    font-size: 50px;
-    line-height: 44px;
-    width: 700px;
+    font-size: 30px;
+    /* line-height: 44px; */
+    /* width: 700px; */
 }
-#nop{
+
+.i-am-new #nop {
     border: 1px solid rgba(0, 4, 104, 1);
     height: 5px;
-    width:100px;
+    width: 100px;
     border-radius: 50px;
     background-color: rgb(3, 3, 183);
-    margin-top: 30px;
-    margin-left: 50px;
+    margin-top: 15px;
+    /* margin-left: 10px; */
 }
-.hello{
+
+.i-am-new .hello {
     font-weight: 400px;
     font-size: 20px;
     line-height: 30px;
     color: rgba(41, 41, 41, 1);
     margin-top: 20px;
 }
-.christ{
-    height: 330px;
+
+.christ {
+    height: fit-content;
     display: inline-block;
-    margin-left: 25px;
+    width: 100%;
 }
-.christ img{
-    float:right;
+
+.i-am-new .christ img {
+    float: right;
     margin-right: 40px;
 }
-#sch{
+
+.i-am-new #sch {
     color: rgba(0, 4, 104, 1);
     margin-left: 50px;
     margin-top: 50px;
@@ -163,49 +108,57 @@ ul li a:hover{
     font-size: 50px;
     font-weight: bold;
 }
-#late {
+
+.i-am-new #late {
     margin-left: 50px;
     font-family: arial;
     margin-top: 20px;
     margin-right: 80px;
 }
-.spiritual{
-    background-image: url(spirit.png);
-    height: 400px;
+
+.i-am-new .spiritual {
+    background-image: url('/static/images/spirit.png');
+    min-height: 400px;
     margin-bottom: 40px;
     margin-top: 90px;
-    margin-left: 70px;
-    margin-right: 80px;
+    /* margin-left: 70px;
+    margin-right: 80px; */
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
+    height: fit-content;
 }
-#mens{
+
+.i-am-new #mens {
     width: 414px;
     height: 166px;
     margin-top: 70px;
     margin-left: 30px;
-    border: 2px solid red;
+    /* /border: 2px solid red; */
 }
-#mens h2{
-    font-weight:500;
-    font-size:55px;
-    padding: 20px;
-    color:white;
 
+.i-am-new #mens h2 {
+    font-weight: 500;
+    font-size: 55px;
+    padding: 20px;
+    color: white;
 }
-#many{
+
+.i-am-new #many {
     width: 475px;
     height: 166px;
     margin-top: 70px;
     margin-left: 30px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: inline-block;
 }
-#many p{
+
+.i-am-new #many p {
     color: white;
     line-height: 20px;
 }
-#nepa{
+
+.i-am-new #nepa {
     float: right;
     margin-right: 200px;
     border: 1px solid white;
@@ -213,7 +166,8 @@ ul li a:hover{
     height: 70px;
     width: 221px;
 }
-#nepa p{
+
+.i-am-new #nepa p {
     color: white;
     text-align: center;
     margin-top: 25px;

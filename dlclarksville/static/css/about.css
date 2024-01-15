@@ -36,6 +36,21 @@
     margin-top: 75px;
 }
 
+.accordion-body {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accordion-body p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.accordion-body li {
+    margin-bottom: 15px;
+}
+
 .accordion button {
     height: 100px;
     border: none;
@@ -46,13 +61,13 @@
 }
 
 .accordion-collapse {
-    padding: 27px 59px;
+    padding: 27px 59px !important;
     border-bottom: 2px solid var(--primary-blue, #000468);
-    background: rgba(0, 4, 104, 0.93);
+    /* background: rgba(0, 4, 104, 0.93); */
 }
 
 .accordion-body * {
-    color: #FFF;
+    color: #242424;
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;

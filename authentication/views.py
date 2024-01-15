@@ -26,21 +26,22 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.contrib.sites.shortcuts import get_current_site
 from .forms import UserRegisterForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 class SignUpSuccessful(TemplateView):
     template_name = 'authentication/thanks.html'
-class UserDetail(DetailView):
+class UserDetail(LoginRequiredMixin, DetailView):
     model = Member
     template_name = 'courses/profile_detail.html'
-    # login_url = "GasApp:login"
+    login_url = "authentication:login"
     redirect_field_name = "redirect_to"
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['username', 'first_name', 'last_name', 'email', 'country', 'region', 'gender', 'status', 'phone_number', 'residential_address', 'date_of_birth', 'avatar']
     model = Member
     template_name = 'authentication/user_update.html'
-    # login_url = "GasApp:login"
+    login_url = "authentication:login"
     redirect_field_name = "redirect_to"
 class UserLoginView(View):
     """
@@ -106,10 +107,10 @@ class UserRegisterView(View):
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': default_token_generator.make_token(user),
-                'protocol': 'http',
+                'protocol': 'https',
             }
             )
-            from_email = 'prosperlekia@gmail.com'
+            from_email = 'clarksvilledlbc@gmail.com'
             to_email = register_form.cleaned_data.get('email')
             email = EmailMessage(
                 mail_subject, message, from_email, to=[to_email]

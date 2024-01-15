@@ -20,27 +20,27 @@
                         <div class="mb-3">
                             <label class="form-label" for="id_username">Username:</label>
                             <div class="helptext" id="id_username_helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
-                            <input class="form-control" type="text" name="username" value="Clarksville" maxlength="150" required aria-describedby="id_username_helptext" id="id_username">
+                            <input class="form-control" type="text" name="username" value="{{form.username.value}}" maxlength="150" required aria-describedby="id_username_helptext" id="id_username">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_first_name">First name:</label>
-                            <input class="form-control" type="text" name="first_name" value="Lekia" maxlength="150" id="id_first_name">
+                            <input class="form-control" type="text" name="first_name" value="{{form.first_name.value}}" maxlength="150" id="id_first_name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_last_name">Last name:</label>
-                            <input class="form-control" type="text" name="last_name" value="Prosper" maxlength="150" id="id_last_name">
+                            <input class="form-control" type="text" name="last_name" value="{{form.last_name.value}}" maxlength="150" id="id_last_name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_email">Email address:</label>
-                            <input class="form-control" type="email" name="email" value="Lekiaprosper@gmail.com" maxlength="254" id="id_email">
+                            <input class="form-control" type="email" name="email" value="{{form.email.value}}" maxlength="254" id="id_email">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_country">Country:</label>
-                            <input class="form-control" type="text" name="country" value="Nigeria" maxlength="255" required id="id_country">
+                            <input class="form-control" type="text" name="country" value="{{form.country.value}}" maxlength="255" required id="id_country">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_region">Region:</label>
-                            <input class="form-control" type="text" name="region" value="FCT" maxlength="255" required id="id_region">
+                            <input class="form-control" type="text" name="region" value="{{form.region.value}}" maxlength="255" required id="id_region">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_gender">Gender:</label>
@@ -60,15 +60,15 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_phone_number">Phone number:</label>
-                            <input class="form-control" type="text" name="phone_number" value="08137110189" maxlength="255" required id="id_phone_number">
+                            <input class="form-control" type="text" name="phone_number" value="{{form.phone_number.value}}" maxlength="255" required id="id_phone_number">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_residential_address">Residential address:</label>
-                            <input class="form-control" type="text" name="residential_address" value="Flat 4 Amba Drive, Igbo-Etche" maxlength="255" required id="id_residential_address">
+                            <input class="form-control" type="text" name="residential_address" value="{{form.residential_address.value}}" maxlength="255" required id="id_residential_address">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="id_date_of_birth">Date of birth:</label>
-                            <input class="form-control" type="text" name="date_of_birth" value="1994-07-10" required id="id_date_of_birth">
+                            <input class="form-control" type="text" name="date_of_birth" value="{{form.date_of_birth.value}}" required id="id_date_of_birth">
                         </div>
                         <div class="mb-3">
                             <label for="id_avatar">Avatar:</label>

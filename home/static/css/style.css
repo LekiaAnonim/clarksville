@@ -61,6 +61,15 @@ a {
     font-weight: 700;
 }
 
+.navigation-container nav ul li a {
+    font-family: Poppins;
+    color: var(--primary-value);
+    list-style: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .donate-join-container button {
     box-shadow: 10px 20px 40px 0px #00000026;
     border-radius: 20px;
@@ -305,6 +314,12 @@ align-items: center; */
     justify-content: space-between;
 }
 
+.section-title-container .know-more a {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
 #about-church .section-title {
     width: fit-content;
     max-width: 397px;
@@ -333,6 +348,10 @@ align-items: center; */
     /* border: #fff solid; */
 }
 
+.know-more a {
+    color: #fff;
+}
+
 #about-church .know-more a {
     color: #fff;
     font-weight: 400;
@@ -352,7 +371,7 @@ align-items: center; */
 
 .about-card-container .about-card-1 {
     width: 60%;
-    padding: 40px 30px;
+    padding: 40px 10px;
     height: 100% !important;
     display: flex;
     align-items: center;
@@ -360,7 +379,7 @@ align-items: center; */
 
 .about-card-container .about-card-2 {
     width: 40%;
-    padding: 50px 40px;
+    padding: 40px 10px;
     height: 100% !important;
 }
 
@@ -369,6 +388,7 @@ align-items: center; */
     border-radius: 25px;
     max-height: 272px;
     margin-right: 15px;
+    min-height: 200px;
 }
 
 .about-card-container .about-text * {
@@ -393,19 +413,23 @@ align-items: center; */
 }
 
 .about-card-11 {
-    background: #7479FF73;
+    background: #4d53ff;
+    opacity: 0.8;
 }
 
 .about-card-12 {
-    background: #FF9F9F80;
+    background: #fd5f5f;
+    opacity: 0.8;
 }
 
 .about-card-21 {
-    background: #000000B2;
+    background: #000000;
+    opacity: 0.8;
 }
 
 .about-card-22 {
-    background: #FBFBFB80;
+    background: #026838;
+    opacity: 0.8;
 }
 
 
@@ -413,11 +437,12 @@ align-items: center; */
 
 #redemption-section {
     width: 100%;
-    max-height: 788px;
+    max-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* height: 788px; */
 }
 
 .redemption-section-container .section-title {
@@ -439,16 +464,19 @@ align-items: center; */
     background: #000468C4;
     padding: 50px 20px 15px 10%;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .redemption-section-container .union-image {
-    margin-top: -300px;
     max-width: 100%;
     height: auto;
 }
 
 .redemption-section-container .union-image img {
     width: 100% !important;
+    border-radius: 30px;
+    min-height: 300px;
 }
 
 
@@ -538,7 +566,7 @@ input[type='submit'] {
     display: flex;
     align-items: center;
     margin-top: 100px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .daily-devotion-container h2 {
@@ -546,9 +574,9 @@ input[type='submit'] {
     font-family: Roboto;
 }
 
-.daily-devotion-container div {
+.daily-devotion-container .daily-devotion-card {
     width: 100%;
-    max-width: 354px;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -588,6 +616,8 @@ display: block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
 }
 
 .worship-service-container h3 {
@@ -639,6 +669,44 @@ display: block;
     transform-origin: 35.5%;
 }
 
+.footer-container .social {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    background-color: #121167;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6.45px;
+}
+
+.footer-container .socials {
+    display: flex;
+    align-items: center;
+}
+
+.other-donations-platforms {
+    display: flex;
+    gap: 20px;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 40px !important;
+    justify-content: center;
+}
+
+.other-donations-platforms .card {
+    width: 100%;
+    max-width: 500px;
+}
+
+.other-donations-platforms .card .card-body {
+    padding: 40px 20px;
+}
+
+.other-donations-platforms .card .card-body * {
+    text-align: center;
+}
+
 @media screen and (max-width: 1060px) {
     .about-card-container .about-text h2 {
         font-size: calc(0.8rem + 1.325vw);
@@ -658,14 +726,28 @@ display: block;
     .redemption-section-container .union-image {
         display: none;
     }
-}
-
-@media screen and (max-width: 890px) {
+    .daily-devotion-container {
+        flex-wrap: wrap;
+    }
     .navigation-container {
         display: none;
     }
     .donate-join-container {
         display: none;
+    }
+    .hamburger {
+        display: flex;
+        margin-top: 5px;
+    }
+    .other-donations-platforms {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .i-am-new .boy {
+        flex-wrap: wrap;
+        margin-bottom: 30px;
     }
 }
 
@@ -673,7 +755,7 @@ display: block;
     .hero-text-cta h1 {
         font-size: calc(1.2rem + 2vw);
     }
-    .hero-text-cta p {
+    .hero-text-cta .hero-text {
         font-size: 12px;
     }
 }
@@ -681,9 +763,13 @@ display: block;
 @media screen and (max-width: 748px) {
     .about-card-container .about-card-1 {
         flex-direction: column;
+        width: 100%;
     }
     .about-card-container .about-card-1 img {
         margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        margin-right: 10px;
     }
     .hero-container {
         flex-direction: column-reverse;
@@ -695,10 +781,9 @@ display: block;
     .hero-text-cta {
         max-width: 100%;
         width: 100%;
-    }
-    .hamburger {
-        display: flex;
-        margin-top: 5px;
+        margin-top: 20px;
+        padding-left: 20px;
+        margin-right: 20px;
     }
     .daily-devotion-container div {
         max-width: 100%;
@@ -731,4 +816,68 @@ display: block;
     .about-card-container .about-card-2 {
         width: 100%;
     }
+    .slideshow {
+        width: 100%;
+        height: 300px;
+    }
+    #about-church .section-title {
+        margin-left: 10px;
+    }
+    #about-church .know-more {
+        margin-right: 10px;
+        float: right;
+        display: flex;
+        justify-content: right;
+    }
+    .daily-devotion-container .daily-devotion-card {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .footer-container {
+        margin-top: 30px;
+    }
+    .daily-devotion {
+        padding: 50px 10px;
+    }
+    .worship-service-container {
+        margin-right: 0;
+        width: 100%;
+    }
+    footer .bottom {
+        width: 100%;
+        padding: 10px;
+    }
+    footer .bottom div {
+        max-width: 100%;
+    }
+    .about-card-container .about-text p {
+        font-size: 12px;
+    }
+    .daily-devotion-container {
+        flex-wrap: wrap;
+    }
+}
+
+.zoom-service {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: #2D8CFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.zoom-service svg {
+    fill: #ffffff;
+    width: 25px;
+    height: 22px;
+}
+
+.service-name-zoom {
+    display: flex;
+    align-items: center;
 }
