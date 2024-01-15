@@ -691,6 +691,7 @@ display: block;
     flex-basis: 100%;
     width: 100%;
     margin-top: 40px !important;
+    justify-content: center;
 }
 
 .other-donations-platforms .card {
