@@ -698,9 +698,12 @@ display: block;
     max-width: 500px;
 }
 
-.other-donations-platforms .card .crad-body {
-    text-align: center;
+.other-donations-platforms .card .card-body {
     padding: 40px 20px;
+}
+
+.other-donations-platforms .card .card-body * {
+    text-align: center;
 }
 
 @media screen and (max-width: 1060px) {
