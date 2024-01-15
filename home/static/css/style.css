@@ -685,10 +685,18 @@ display: block;
     align-items: center;
 }
 
+.other-donations-platforms {
+    display: flex;
+    gap: 20px;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 40px !important;
+}
 
-/* .footer-container .social svg {
-    fill: #fff;
-} */
+.other-donations-platforms .card {
+    width: 100%;
+    max-width: 500px;
+}
 
 @media screen and (max-width: 1060px) {
     .about-card-container .about-text h2 {
@@ -721,6 +729,9 @@ display: block;
     .hamburger {
         display: flex;
         margin-top: 5px;
+    }
+    .other-donations-platforms {
+        flex-wrap: wrap;
     }
 }
 
