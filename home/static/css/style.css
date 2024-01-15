@@ -698,6 +698,11 @@ display: block;
     max-width: 500px;
 }
 
+.other-donations-platforms .card .crad-body {
+    text-align: center;
+    padding: 40px 20px;
+}
+
 @media screen and (max-width: 1060px) {
     .about-card-container .about-text h2 {
         font-size: calc(0.8rem + 1.325vw);
