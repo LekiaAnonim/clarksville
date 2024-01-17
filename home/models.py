@@ -190,11 +190,23 @@ class IamNew(Page):
     caption_title = RichTextField(null=True, blank=True)
     caption_text = RichTextField(null=True, blank=True)
     banner = CloudinaryField("image", null=True, blank=True)
+    first_section_title = RichTextField(null=True, blank=True)
+    first_section_body = RichTextField(null=True, blank=True)
+    second_section_title = RichTextField(null=True, blank=True)
+    second_section_body = RichTextField(null=True, blank=True)
+    third_section_title = RichTextField(null=True, blank=True)
+    third_section_body = RichTextField(null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('caption_title'),
         FieldPanel('caption_text'),
         FieldPanel('banner'),
+        FieldPanel('first_section_title'),
+        FieldPanel('first_section_body'),
+        FieldPanel('second_section_title'),
+        FieldPanel('second_section_body'),
+        FieldPanel('third_section_title'),
+        FieldPanel('third_section_body'),
     ]
 
 class Donate(Page):

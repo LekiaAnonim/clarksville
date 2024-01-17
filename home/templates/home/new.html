@@ -14,8 +14,8 @@
     <div class="main i-am-new">
         <div class="pix">
             <div class="dem">
-                <h3>I'M NEW</h3>
-                <p id="me">Step into a Sanctuary of Faith, Love, and Spiritual Growth
+                <h3>{{page.caption_title|richtext}}</h3>
+                <p id="me">{{page.caption_text|richtext}}
                 </p>
             </div>
         </div>
@@ -23,12 +23,12 @@
             <div><img src="/static/images/boy.jpg" alt="small boy praying" /></div>
             <div class="lam">
                 <h3 class="rap">
-                    We invite you to belong and join us any Sunday for our weekly worship gathering.
+                    {{page.first_section_title|richtext}}
                 </h3>
                 <div id="nop"></div>
                 <div class="hello">
                     <p>
-                        Hello, dear friend! With immense joy, I extend a heartfelt welcome to you from the entire family at Deeper Life Bible Church, Washington DC. Your presence here is a source of great excitement for us.
+                        {{page.first_section_body|richtext}}
                     </p>
                 </div>
             </div>
@@ -37,23 +37,22 @@
             <div><img src="/static/images/christ.jpg" alt="man alone"></div>
             <div>
                 <h2 id="sch">
-                    Experience Christ-Centered Living
+                    {{page.second_section_title|richtext}}
                 </h2>
                 <p id="late">
-                    Join us in a journey of deepening your faith and quenching your thirst for the divine. DLBC Washington DC is more than a church; it's a community dedicated to genuine worship, profound teachings, and an unyielding commitment to spreading the gospel of
-                    Jesus.
+                    {{page.second_section_body|richtext}}
                 </p>
             </div>
         </div>
         <div class="spiritual">
             <div id="mens">
-                <H2>Your Spiritual Home Awaits
+                <H2>{{page.third_section_title|richtext}}
 
                 </H2>
             </div>
             <div id="many">
                 <p>
-                    Consider this an invitation to join us in any of our services, where we collectively strive to glorify God and transform lives through justice, mercy, and humble devotion.
+                    {{page.third_section_body|richtext}}
                 </p>
             </div>
             <a href="{% url 'authentication:signup' %}">

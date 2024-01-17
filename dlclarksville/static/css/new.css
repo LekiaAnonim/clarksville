@@ -36,7 +36,20 @@
     font-size: 50px;
 }
 
+.i-am-new .dem h3 * {
+    color: white;
+    font-size: 50px;
+}
+
 .i-am-new #me {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: arial;
+    color: #fff;
+}
+
+.i-am-new #me * {
     font-size: 15px;
     font-weight: bold;
     margin-top: 15px;
@@ -67,8 +80,12 @@
     color: rgba(0, 4, 104, 1);
     font-weight: 350px;
     font-size: 30px;
-    /* line-height: 44px; */
-    /* width: 700px; */
+}
+
+.i-am-new .rap * {
+    color: rgba(0, 4, 104, 1);
+    font-weight: 350px;
+    font-size: 30px;
 }
 
 .i-am-new #nop {
