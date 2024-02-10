@@ -7,6 +7,7 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from authentication.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+from django.contrib import messages
 # from authentication.models import MembershipStatus
 # from wagtailmetadata.models import MetadataPageMixin
 # Create your models here.
@@ -93,15 +94,24 @@ class CoursePage(Page):
         for lesson in member_course_completed_lessons[0:len(user_lesson)]:
             completed_lessons.append(lesson)
 
-        
-        lesson_percent_complete = (len(member_course_completed_lessons)/len(course_lessons))*100
+
+        try:
+            # code that produces error
+            lesson_percent_complete = (len(member_course_completed_lessons)/len(course_lessons))*100
+            context["lesson_percent_complete"] = lesson_percent_complete
+        except ZeroDivisionError as e:
+            messages.error(request,
+                           f"No lessons has been added to this course."
+                           )
+
         context["course_lessons"] = course_lessons
         context["member_course_completed_lessons"] = member_course_completed_lessons
         context["member_course_uncompleted_lessons"] = member_course_uncompleted_lessons
-        context["lesson_percent_complete"] = lesson_percent_complete
+        
         context["resume_page"] = resume_page
         context["completed_lessons"] =completed_lessons
         context["resources"] =resources
+        # context["message"] = message
         return context
     
 class LessonPage(Page):

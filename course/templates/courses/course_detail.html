@@ -37,7 +37,7 @@
                                     {% if lesson_percent_complete == 0 %}
                                     <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}"><button class="start">Start Course</button></a> {% else %}
                                     <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}">
-                                        <button class="start">Resume</button>
+                                        <button class="start">Start</button>
                                     </a> {% endif %}
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     {% else %}
-                                    <div>No Lesson Available</div>
+                                    <div>No Lesson Completed</div>
                                     {% endif %}{% endfor %} {% for lesson in member_course_uncompleted_lessons %} {% if lesson %}
                                     <div class="chapter-card">
                                         <div class="chapter-status-image locked">

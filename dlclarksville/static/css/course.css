@@ -208,6 +208,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    max-width: 950px;
 }
 
 .course-body ol {
