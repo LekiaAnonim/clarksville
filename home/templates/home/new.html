@@ -21,7 +21,7 @@
         </div>
         <div class="boy new-section-container">
             <div><img src="/static/images/boy.jpg" alt="small boy praying" /></div>
-            <div class="lam">
+            <div class="lam section-text">
                 <h3 class="rap">
                     {{page.first_section_title|richtext}}
                 </h3>
@@ -35,30 +35,22 @@
         </div>
         <div class="christ new-section-container">
             <div><img src="/static/images/christ.jpg" alt="man alone"></div>
-            <div>
-                <h2 id="sch">
-                    {{page.second_section_title|richtext}}
-                </h2>
-                <p id="late">
-                    {{page.second_section_body|richtext}}
-                </p>
+            <div class="section-text">
+                <h2 id="sch">{{page.second_section_title|richtext}}</h2>
+                <p id="late">{{page.second_section_body|richtext}}</p>
             </div>
         </div>
         <div class="spiritual">
-            <div id="mens">
-                <H2>{{page.third_section_title|richtext}}
-
-                </H2>
-            </div>
-            <div id="many">
-                <p>
-                    {{page.third_section_body|richtext}}
-                </p>
+            <div class="spiritual-text-container">
+                <div id="mens">
+                    <h2>{{page.third_section_title|richtext}}</h2>
+                </div>
+                <div id="many">
+                    <p>{{page.third_section_body|richtext}}</p>
+                </div>
             </div>
             <a href="{% url 'authentication:signup' %}">
-                <div id="nepa">
-                    <p>Join Us</p>
-                </div>
+                <div id="nepa"><p>Join Us</p></div>
             </a>
         </div>
     </div>
