@@ -27,7 +27,7 @@
             <div class="menu-card">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#FAFAFF" ;transform: ;msFilter:; "><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86
                     0-7 3.141-7 7v1h17z "></path></svg>                {% if request.user.is_authenticated %}
-                <a href="{% url 'authentication:member_profile' request.user.pk %} ">Profile</a>{% else %}
+                <a href="{% url 'authentication:member_profile' request.user.pk %}">Profile</a>{% else %}
                 <a href="/ ">Profile</a>{% endif %}
             </div>
             <div class="menu-card ">
@@ -36,7 +36,7 @@
                     28.6198 37.3845 27.6736 36.7553 27.0444L35.1997 25.4888V17.6C35.1997 10.3099 29.2898 4.40002 21.9997 4.40002Z " fill="#FAFAFF "/>
                     <path d="M21.9996 39.6C18.3545 39.6 15.3996 36.6451 15.3996 33H28.5996C28.5996 36.6451 25.6447 39.6 21.9996 39.6Z " fill="#FAFAFF "/>
                 </svg>
-                <a href="# ">Notification</a>
+                <a href="{% url 'notifications:notification_list' %}">Notification</a>
             </div>
             <div class="menu-card ">
                 <svg viewBox="0 0 44 44 " xmlns="http://www.w3.org/2000/svg ">

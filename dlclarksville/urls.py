@@ -15,6 +15,7 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path("course/", include('course.urls', namespace = 'course')),
     path("member/", include('authentication.urls', namespace = 'authentication')),
+    path("notification/", include('notification.urls', namespace = 'notifications')),
 ]
 
 

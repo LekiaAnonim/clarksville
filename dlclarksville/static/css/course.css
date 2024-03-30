@@ -1088,8 +1088,94 @@ margin-right: auto; */
     animation: fadeEffect 1s;
     width: 100%;
 }
+.main-content{
+    margin-top: 30px;
+}
+/* STYING NOTIFICATION */
+.notification-header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.notification-header svg{
+    fill: var(--accentlight);
+    width: 38px;
+    height: 43px;
+}
+.notification-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+.notification-card{
+    padding: 15px 15px;
+    width: 80%;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.modal-backdrop {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10 !important;
+    width: 80%;
+    height: fit-content;
+    background-color: #000;
+}
 
-
+.modal-dialog {
+    z-index: 1500 !important;
+    width: 80%;
+    max-width: 80%;
+}
+.modal {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+.modal-content {
+    z-index: 1000 !important;
+    width: 100%;
+    max-width: 100%;
+}
+.notification-card:hover h3{
+    color: var(--accentlight);
+}
+.notification-status{
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+}
+.notification-card h3{
+    font-size: 24px;
+}
+.notification-card-read{
+    background-color: #d9d9d9;
+}
+.notification-card-not-read{
+    background-color: #FFE8E8;
+}
+.notification-read{
+    background: var(--accentlight);
+}
+.notification-not-read{
+    background: #FF2E00;
+}
 /* Go from zero to full opacity */
 
 @keyframes fadeEffect {
@@ -1125,6 +1211,9 @@ margin-right: auto; */
     .personal-profile-header .person-name-status h1 {
         font-size: 34px;
         line-height: 1;
+    }
+    .notification-card h3{
+        font-size: 14px;
     }
 }
 

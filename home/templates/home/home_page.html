@@ -125,8 +125,10 @@
             </div>
         </div>
         <div class="daily-devotion-container">
-            <div class="gck-daily daily-devotion-card"><iframe class="gck-video" src="https://www.youtube.com/embed/videoseries?si=YPj_lINCDTJfiwrH&amp;list=PLhUSSHKj-nG_f2IOOj6Au917Juj0lVVcl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+            <div class="gck-daily daily-devotion-card">
+                <iframe class="gck-video" src="https://www.youtube.com/embed/videoseries?si=YPj_lINCDTJfiwrH&amp;list=PLhUSSHKj-nG_f2IOOj6Au917Juj0lVVcl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
             {% if daily_devotions %} {% for devotion in daily_devotions %}
             <div href="{{ devotion.devotion_url }}" class="daily-manner daily-devotion-card" style="background: url('{{devotion.devotion_image.url}}'); background-repeat: no-repeat; background-size: cover;">
