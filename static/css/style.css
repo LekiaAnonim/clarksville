@@ -41,6 +41,9 @@ a {
 .logo-container {
     width: 86px;
     height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container img {
@@ -419,17 +422,17 @@ align-items: center; */
 
 .about-card-12 {
     background: #fd5f5f;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
 .about-card-21 {
     background: #000000;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
 .about-card-22 {
     background: #026838;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
 
@@ -565,7 +568,7 @@ input[type='submit'] {
 .daily-devotion-container {
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 20px;
     /* flex-wrap: wrap; */
 }
 
@@ -685,10 +688,27 @@ display: block;
     align-items: center;
 }
 
+.other-donations-platforms {
+    display: flex;
+    gap: 20px;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 40px !important;
+    justify-content: center;
+}
 
-/* .footer-container .social svg {
-    fill: #fff;
-} */
+.other-donations-platforms .card {
+    width: 100%;
+    max-width: 500px;
+}
+
+.other-donations-platforms .card .card-body {
+    padding: 40px 20px;
+}
+
+.other-donations-platforms .card .card-body * {
+    text-align: center;
+}
 
 @media screen and (max-width: 1060px) {
     .about-card-container .about-text h2 {
@@ -722,12 +742,21 @@ display: block;
         display: flex;
         margin-top: 5px;
     }
+    .other-donations-platforms {
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width: 890px) {
     .i-am-new .boy {
         flex-wrap: wrap;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+    }
+    .christ {
+        flex-wrap: wrap;
+    }
+    .section-text{
+        width: 100%;
     }
 }
 
@@ -818,7 +847,7 @@ display: block;
         margin-top: 30px;
     }
     .daily-devotion {
-        padding: 50px 10px;
+        padding: 30px 10px;
     }
     .worship-service-container {
         margin-right: 0;
@@ -836,6 +865,18 @@ display: block;
     }
     .daily-devotion-container {
         flex-wrap: wrap;
+    }
+    .nav-header {
+        padding: 5px 40px;
+    }
+    
+    .logo-container {
+        width: 50px;
+        height: 45px;
+    }
+
+    .i-am-new #mens h2 {
+        font-size: 30px;
     }
 }
 

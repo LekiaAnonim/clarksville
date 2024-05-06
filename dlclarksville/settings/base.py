@@ -34,6 +34,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # Application definition
 
 INSTALLED_APPS = [
+    "event",
     "notification",
     "menus",
     "authentication",
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django.contrib.humanize',
     'django_extensions',
 ]
 

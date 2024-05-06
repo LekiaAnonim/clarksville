@@ -25,7 +25,10 @@
             <div class="notification-container">
                 {% for notification in notifications %}
                 <div class="btn notification-card notification-card-read" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{notification.pk}}">
-                    <h3>{{ notification.title }}</h3>
+                    <div>
+                        <h3>{{ notification.title }}</h3>
+                        <span>{{notification.date}}</span>
+                    </div>
                     <div class="notification-status notification-read"></div>
                 </div>
                 <div class="modal fade" id="staticBackdrop{{notification.pk}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

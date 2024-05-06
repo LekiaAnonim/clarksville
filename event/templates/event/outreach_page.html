@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %} {% load humanize %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block og_tag %}
+    <meta property="title" content="Event: {{page.event_title}}" />
+    <title>{{page.post_title}}</title>
+    <meta property="og:title" content="Event: {{page.event_title|title}}" />
+    <meta property="og:description" content="{{page.event_body|richtext|truncatewords:40}}" />
+    <meta property="og:image" content="{{page.event_image.url}}" /> {% endblock og_tag %}
+    {% block extra_styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mini.css' %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="blog-page-container" style="background-image: {% if page.banner %} url('{{page.banner.url}}'); {% else %}url('/static/images/outreach_top.jpg'); {% endif %}">
+    </div>
+    <div class="body">
+        <div class="white">
+            <div class="text-side">
+                <div class="text-topic">
+                    <p>{{page.date_created|timesince}}</p>
+                    <h2>
+                        {{page.event_title|title}}
+                    </h2>
+                </div>
+                <div class="image">
+                    <img src="{{page.event_image.url}}" style="width: 100%; height: 75%; border-radius: 10px; background-size: cover;" alt="{{page.event_title}}">
+                </div>
+                <div class="charge">
+                    {{page.event_body|richtext}}
+                </div>
+            </div>
+        </div> 
+    </div>
+    {% if form %}
+    <div class="section-title">
+        <h1>Register for the Event</h1>
+        <p>Fill the form below to register for the event.</p>
+    </div>
+    <form action="{% pageurl form.page %}" method="post">
+        {% csrf_token %}
+        <div class="form-wrapper">
+            {{form.as_div}}
+        </div>
+        <input class="subscribe-btn" type="submit" value="Register">
+    </form>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
