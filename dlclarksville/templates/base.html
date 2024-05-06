@@ -4,9 +4,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% block site_utils %}
-    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon"> {% endblock %} {% block title %}
-    <title>DLBC Clarksville</title>{% endblock %} {% block styles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block site_utils %}
+    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon">
+    <meta name="keywords" content="Church, Deeper Life, Spiritual, Truth, Worship, Christianity, God, Jesus, Clarksville, USA">
+    {% endblock %} 
+    {% block title %}<title>DLBC Clarksville</title>{% endblock %}
+    {% block page_desc %} 
+    <meta name="description" content="Deeper Life Bible Church, Clarksville, United States of America">
+    {% endblock %}
+    {% block og_tag %}
+    <meta property="title" content="DLBC Clarksville: {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+    <meta property="og:title" content="DLBC Clarksville: {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+    <meta property="og:description" content="{{self.search_description}}" />
+    <meta property="og:image" content="{{self.event_image.url}}" />
+
+    <meta itemprop="name" content="DLBC Clarksville: {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}">
+    <meta itemprop="description" content="{{self.search_description}}" />
+    <meta itemprop="image" content="{{self.banner.url}}" />
+
+    <meta name="twitter:title" content="DLBC Clarksville: {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}">
+    <meta name="twitter:description" content="{{self.search_description}}">
+    <meta name="twitter:image" content="{{self.banner.url}}">
+
+    {% endblock og_tag %}
+    
+    {% block styles %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick-theme.css" />

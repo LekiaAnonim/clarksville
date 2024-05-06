@@ -4,12 +4,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block og_tag %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    {% block title %}<title>{{page.event_title}}</title>{% endblock %}
+    {% block og_tag %}
     <meta property="title" content="Event: {{page.event_title}}" />
-    <title>{{page.post_title}}</title>
     <meta property="og:title" content="Event: {{page.event_title|title}}" />
-    <meta property="og:description" content="{{page.event_body|richtext|truncatewords:40}}" />
-    <meta property="og:image" content="{{page.event_image.url}}" /> {% endblock og_tag %}
+    <meta property="og:description" content="{{page.short_description}}" />
+    <meta property="og:image" content="{{page.event_image.url}}" /> 
+    
+    <meta itemprop="name" content="DLBC Clarksville: {% if self.seo_title %}{{ self.seo_title }}{% else %}Event: {{page.event_title}}{% endif %}">
+    <meta itemprop="description" content="="{{page.short_description}}" />
+    <meta itemprop="image" content="{{self.event_image.url}}" />
+    {% endblock og_tag %}
+    {% block page_desc %} 
+    <meta name="description" content="{{page.short_description}}">
+    {% endblock %}
     {% block extra_styles %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mini.css' %}" />
     {% endblock %}
