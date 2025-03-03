@@ -25,7 +25,7 @@
         <div class="invitation-charge">
             {% for outreach in outreaches %}
             <div class="invitation1">
-                <img src="{{outreach.event_image.url}}" style="width:100%; height:fit-content; border-radius: 15px 15px 0px 0px;" alt="love">
+                <img src="{{outreach.event_image.url}}" style="width:100%; max-height:400px; border-radius: 15px 15px 0px 0px;" alt="love">
                 <div class="text-body">
                     <h2>
                         <a href="{% pageurl outreach %}">{{outreach.event_title|title}}</a>
