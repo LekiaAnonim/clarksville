@@ -70,7 +70,7 @@ class EventPage(AbstractEmailForm):
                 self.process_form_submission(form)
                 # Update the original landing page context with other data
                 landing_page_context = self.get_context(request)
-                landing_page_context['email'] = form.cleaned_data['email']
+                landing_page_context['email'] = form.cleaned_data['email_address']
                 return render(
                     request,
                     self.get_landing_page_template(request),
